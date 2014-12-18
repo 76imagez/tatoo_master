@@ -77,7 +77,7 @@ UIFont *yourCustomFont = [UIFont fontWithName:@"叶根友千秋字体" size:18];
         [signUpViewController setDelegate:self]; // Set ourselves as the delegate
         
        
-         logInViewController.fields = PFLogInFieldsFacebook | PFLogInFieldsDismissButton  ;
+         logInViewController.fields = PFLogInFieldsUsernameAndPassword | PFLogInFieldsLogInButton| PFLogInFieldsSignUpButton | PFLogInFieldsFacebook | PFLogInFieldsDismissButton |PFLogInFieldsPasswordForgotten  ;
         // Assign our sign up controller to be displayed from the login controller
         [logInViewController setSignUpController:signUpViewController];
         // Set the gesture
@@ -86,6 +86,7 @@ UIFont *yourCustomFont = [UIFont fontWithName:@"叶根友千秋字体" size:18];
         [self presentViewController:logInViewController animated:YES completion:NULL];
            
     }
+      
 }
 -(CGFloat) tableView:(UITableView *)aTableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
     
@@ -197,7 +198,7 @@ UIFont *yourCustomFont = [UIFont fontWithName:@"叶根友千秋字体" size:18];
         } else {
            
             // If user is linked to neither, let's use their username for the Welcome label.
-            self.welcomeLabel.text =[NSString stringWithFormat:NSLocalizedString(@"歡迎 %@", nil), [PFUser currentUser].username];
+            self.welcomeLabel.text =[NSString stringWithFormat:NSLocalizedString(@"%@", nil), [PFUser currentUser].username];
             
         }
         

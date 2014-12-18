@@ -26,7 +26,7 @@
     [super viewWillAppear:animated];
     if ([PFUser currentUser]) {
         // self.profile_image.image = UIGraphicsGetImageFromCurrentImageContext();
-        
+        self.profile_image.image=[UIImage imageNamed:@"ICON.PNG"];
         self.profile_image.layer.cornerRadius =self.profile_image.frame.size.width / 2;
         self.profile_image.layer.borderWidth = 3.0f;
         self.profile_image.layer.borderColor = [UIColor whiteColor].CGColor;
@@ -83,7 +83,7 @@
             
         } else {
             // If user is linked to neither, let's use their username for the Welcome label.
-            self.welcome.text =[NSString stringWithFormat:NSLocalizedString(@"歡迎 %@", nil), [PFUser currentUser].username];
+            self.welcome.text =[NSString stringWithFormat:NSLocalizedString(@"%@", nil), [PFUser currentUser].username];
             
         }
         
