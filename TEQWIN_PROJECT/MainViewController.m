@@ -59,7 +59,7 @@
     self.navigationItem.backBarButtonItem = backButton;
 
     [self queryParseMethod];
-
+    [self queryParseMethod_1];
     // scroll search bar out of sight
     UICollectionViewFlowLayout *flowLayout = [[UICollectionViewFlowLayout alloc] init];
     flowLayout.scrollDirection = UICollectionViewScrollDirectionHorizontal;
@@ -109,7 +109,24 @@
     
     
 }
-
+- (void)queryParseMethod_1 {
+      PFQuery *query = [PFQuery queryWithClassName:@"Tattoo_Master"];
+    query.cachePolicy = kPFCachePolicyNetworkElseCache;
+    [query whereKey:@"Master_id" equalTo:@"1"];
+    [query whereKey:@"update_allert" equalTo:[NSNumber numberWithBool:YES]];
+    [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
+           if ([objects count] == 0) {
+           }
+        else
+        {
+            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"下載最新版本"
+                                                            message:@"需要前往App Store嗎？"
+                                                           delegate:self
+                                                  cancelButtonTitle:@"取消"
+                                                  otherButtonTitles:@"前往",nil];
+            
+            [alert show];
+        }}];}
 - (void)queryParseMethod {
     MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
     hud.mode = MBProgressHUDModeIndeterminate;
@@ -154,6 +171,14 @@
   
 
     }
+    if([button isEqualToString:@"前往"])
+    {
+        NSURL *itunesURL = [NSURL URLWithString:@"itms-apps://itunes.apple.com/app/id946737069"];
+        [[UIApplication sharedApplication] openURL:itunesURL];
+        
+        
+    }
+
 }
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
 {
