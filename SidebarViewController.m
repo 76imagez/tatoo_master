@@ -92,11 +92,11 @@
         
         
         self.profile_image.layer.cornerRadius =self.profile_image.frame.size.width / 2;
-        self.profile_image.layer.borderWidth = 3.0f;
+        self.profile_image.layer.borderWidth =2.0f;
         self.profile_image.layer.borderColor = [UIColor whiteColor].CGColor;
         self.profile_image.clipsToBounds = YES;
         
-        self.profile_image.image = [UIImage imageNamed:@"FACEBOOK.JPG"];
+        self.profile_image.image = [UIImage imageNamed:@"login.png"];
         self.welcome.text = nil;
     }
 

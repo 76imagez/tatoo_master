@@ -10,7 +10,8 @@
 #import <UIKit/UIKit.h>
 #import <FacebookSDK/FacebookSDK.h>
 #import <Parse/Parse.h>
-#import <Parse/PFLogInViewController.h>
+#import <ParseUI/ParseUI.h>
+#import  <ParseFacebookUtils/PFFacebookUtils.h>
 @interface LoginUIViewController : UIViewController<PFLogInViewControllerDelegate, PFSignUpViewControllerDelegate,UITableViewDataSource, UITableViewDelegate>
 {
  

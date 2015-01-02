@@ -6,6 +6,8 @@
 //  Copyright (c) 2014年 Teqwin. All rights reserved.
 //
 #import <Parse/Parse.h>
+#import <ParseUI/ParseUI.h>
+#import  <ParseFacebookUtils/PFFacebookUtils.h>
 #import <UIKit/UIKit.h>
 #import "TattooMasterCell.h"
 @interface news_detail_ViewController : UIViewController

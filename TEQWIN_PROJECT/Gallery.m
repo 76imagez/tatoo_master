@@ -15,6 +15,9 @@
 #import "CFShareCircleView.h"
 #import <Social/Social.h>
 #import <FacebookSDK/FacebookSDK.h>
+#import <Parse/Parse.h>
+#import <ParseUI/ParseUI.h>
+#import  <ParseFacebookUtils/PFFacebookUtils.h>
 typedef NS_ENUM(NSInteger, LKLineActivityImageSharingType) {
     LKLineActivityImageSharingDirectType,
     LKLineActivityImageSharingActivityType
@@ -114,6 +117,7 @@ CFShareCircleView *shareCircleView;
     [hud show:YES];
 
     PFQuery *query = [PFQuery queryWithClassName:@"Photo"];
+          [query orderByAscending:@"createdAt"];
     [query whereKey:@"Master_id" equalTo:self.tattoomasterCell.master_id];
     
     query.cachePolicy = kPFCachePolicyCacheThenNetwork;
@@ -130,7 +134,7 @@ CFShareCircleView *shareCircleView;
             [hud hide:YES];
             
             
-            [query orderByAscending:@"createdAt"];
+      
             
         }
         
@@ -275,7 +279,10 @@ NSLog(@"%@", imageFilesArray);
          
             test.frame=CGRectMake(0, self.view.frame.size.height-44, 320,test.contentSize.height);
          ;
-            
+            twoFingerPinch = [[UIPinchGestureRecognizer alloc]
+                              initWithTarget:self
+                              action:@selector(twoFingerPinch:)];
+            [fullImageView addGestureRecognizer:twoFingerPinch];
         } completion:^(BOOL finished) {
             
             [UIApplication sharedApplication].statusBarHidden=YES;
@@ -284,6 +291,15 @@ NSLog(@"%@", imageFilesArray);
         
     }
     
+}
+
+- (void)twoFingerPinch:(UIPinchGestureRecognizer *)recognizer
+{
+    //    NSLog(@"Pinch scale: %f", recognizer.scale);
+    if (recognizer.scale >1.0f && recognizer.scale < 2.5f) {
+        CGAffineTransform transform = CGAffineTransformMakeScale(recognizer.scale, recognizer.scale);
+        fullImageView.transform = transform;
+    }
 }
 ////按圖第二下縮回原型
 -(void)actionTap2:(UITapGestureRecognizer *)sender{
@@ -342,29 +358,7 @@ NSLog(@"%@", imageFilesArray);
 - (void)shareCircleView:(CFShareCircleView *)aShareCircleView didSelectSharer:(CFSharer *)sharer{
    
     if ([sharer.name isEqual:@"Facebook"]) {
-        
-        // Check if the Facebook app is installed and we can present the share dialog
-        FBLinkShareParams *params = [[FBLinkShareParams alloc] init];
-        params.link = [NSURL URLWithString:@"https://developers.facebook.com/docs/ios/share/"];
-        
-        // If the Facebook app is installed and we can present the share dialog
-        if ([FBDialogs canPresentShareDialogWithParams:params]) {
-            
-            // Present share dialog
-            [FBDialogs presentShareDialogWithLink:params.link
-                                          handler:^(FBAppCall *call, NSDictionary *results, NSError *error) {
-                                              if(error) {
-                                                  // An error occurred, we need to handle the error
-                                                  // See: https://developers.facebook.com/docs/ios/errors
-                                                  NSLog(@"Error publishing story: %@", error.description);
-                                              } else {
-                                                  // Success
-                                                  NSLog(@"result %@", results);
-                                              }
-                                          }];
-            
-            // If the Facebook app is NOT installed and we can't present the share dialog
-        } else {
+     
             // FALLBACK: publish just a link using the Feed dialog
             
             // Put together the dialog parameters
@@ -406,7 +400,7 @@ NSLog(@"%@", imageFilesArray);
                                                               }
                                                           }
                                                       }];
-        }}
+        }
     if ([sharer.name isEqual:@"Twitter"]) {
         // 判斷社群網站的服務是否可用
         if ([SLComposeViewController isAvailableForServiceType:SLServiceTypeTwitter]) {

@@ -136,8 +136,13 @@
 		427D34B6199E077F00814463 /* CFSharer.m in Sources */ = {isa = PBXBuildFile; fileRef = 427D34B4199E077F00814463 /* CFSharer.m */; };
 		427D34B9199E079E00814463 /* ShareViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 427D34B8199E079E00814463 /* ShareViewController.m */; };
 		427D3B2F19A32B9E00814463 /* LoginUIViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 427D3B2E19A32B9E00814463 /* LoginUIViewController.m */; };
+		42854BCC1A43D8B800FA66B7 /* loginbutton_up.png in Resources */ = {isa = PBXBuildFile; fileRef = 42854BCB1A43D8B800FA66B7 /* loginbutton_up.png */; };
+		42854BD31A43DF8900FA66B7 /* button_down.png in Resources */ = {isa = PBXBuildFile; fileRef = 42854BD11A43DF8900FA66B7 /* button_down.png */; };
+		42854BD41A43DF8900FA66B7 /* button_up.png in Resources */ = {isa = PBXBuildFile; fileRef = 42854BD21A43DF8900FA66B7 /* button_up.png */; };
+		42854BD61A43E08700FA66B7 /* signupbutton_down.png in Resources */ = {isa = PBXBuildFile; fileRef = 42854BD51A43E08700FA66B7 /* signupbutton_down.png */; };
+		42854BD81A43E0CC00FA66B7 /* signupbutton_up.png in Resources */ = {isa = PBXBuildFile; fileRef = 42854BD71A43E0CC00FA66B7 /* signupbutton_up.png */; };
+		42854BDA1A43E1B600FA66B7 /* login.png in Resources */ = {isa = PBXBuildFile; fileRef = 42854BD91A43E1B600FA66B7 /* login.png */; };
 		428E7C531A00865000CA2C14 /* ICON@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 428E7C511A00865000CA2C14 /* ICON@2x.png */; };
-		428E7C561A0086A900CA2C14 /* ICON.png in Resources */ = {isa = PBXBuildFile; fileRef = 428E7C551A0086A900CA2C14 /* ICON.png */; };
 		428E7C581A0087A900CA2C14 /* background@2x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 428E7C571A0087A900CA2C14 /* background@2x.jpg */; };
 		428E7C5A1A0087B800CA2C14 /* goldebackground@2x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 428E7C591A0087B800CA2C14 /* goldebackground@2x.jpg */; };
 		428E7C5D1A008B5900CA2C14 /* loading.png in Resources */ = {isa = PBXBuildFile; fileRef = 428E7C5B1A008B5900CA2C14 /* loading.png */; };
@@ -207,6 +212,12 @@
 		42AD1ED819B42C4800277278 /* libsqlite3.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 42AD1ED719B42C4800277278 /* libsqlite3.0.dylib */; };
 		42AD1EDC19B42E1200277278 /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 42AD1EDB19B42E1200277278 /* Parse.framework */; };
 		42AF211A19EBC6D000FC3BEC /* ImageExampleCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 42AF211919EBC6D000FC3BEC /* ImageExampleCell.m */; };
+		42C779671A5690FD00CC48DB /* FacebookSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 42C779611A5690FD00CC48DB /* FacebookSDK.framework */; };
+		42C779681A5690FD00CC48DB /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 42C779621A5690FD00CC48DB /* Bolts.framework */; };
+		42C779691A5690FD00CC48DB /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 42C779631A5690FD00CC48DB /* Parse.framework */; };
+		42C7796A1A5690FD00CC48DB /* ParseCrashReporting.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 42C779641A5690FD00CC48DB /* ParseCrashReporting.framework */; };
+		42C7796B1A5690FD00CC48DB /* ParseFacebookUtils.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 42C779651A5690FD00CC48DB /* ParseFacebookUtils.framework */; };
+		42C7796C1A5690FD00CC48DB /* ParseUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 42C779661A5690FD00CC48DB /* ParseUI.framework */; };
 		42CB3DE01A19D2F700BB10DC /* wechat.png in Resources */ = {isa = PBXBuildFile; fileRef = 42CB3DDE1A19D2F700BB10DC /* wechat.png */; };
 		42CB3DE11A19D2F700BB10DC /* wechat@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 42CB3DDF1A19D2F700BB10DC /* wechat@2x.png */; };
 		42D3D5DA19F7481800B01A97 /* FACEBOOK.JPG in Resources */ = {isa = PBXBuildFile; fileRef = 42D3D5D919F7481800B01A97 /* FACEBOOK.JPG */; };
@@ -386,6 +397,12 @@
 		427D34B8199E079E00814463 /* ShareViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShareViewController.m; sourceTree = "<group>"; };
 		427D3B2D19A32B9E00814463 /* LoginUIViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginUIViewController.h; sourceTree = "<group>"; };
 		427D3B2E19A32B9E00814463 /* LoginUIViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginUIViewController.m; sourceTree = "<group>"; };
+		42854BCB1A43D8B800FA66B7 /* loginbutton_up.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = loginbutton_up.png; sourceTree = "<group>"; };
+		42854BD11A43DF8900FA66B7 /* button_down.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = button_down.png; sourceTree = "<group>"; };
+		42854BD21A43DF8900FA66B7 /* button_up.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = button_up.png; sourceTree = "<group>"; };
+		42854BD51A43E08700FA66B7 /* signupbutton_down.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = signupbutton_down.png; sourceTree = "<group>"; };
+		42854BD71A43E0CC00FA66B7 /* signupbutton_up.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = signupbutton_up.png; sourceTree = "<group>"; };
+		42854BD91A43E1B600FA66B7 /* login.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = login.png; sourceTree = "<group>"; };
 		428E7C511A00865000CA2C14 /* ICON@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ICON@2x.png"; sourceTree = "<group>"; };
 		428E7C551A0086A900CA2C14 /* ICON.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ICON.png; sourceTree = "<group>"; };
 		428E7C571A0087A900CA2C14 /* background@2x.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "background@2x.jpg"; sourceTree = "<group>"; };
@@ -462,6 +479,12 @@
 		42AD1EDB19B42E1200277278 /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Parse.framework; sourceTree = "<group>"; };
 		42AF211819EBC6D000FC3BEC /* ImageExampleCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageExampleCell.h; sourceTree = "<group>"; };
 		42AF211919EBC6D000FC3BEC /* ImageExampleCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageExampleCell.m; sourceTree = "<group>"; };
+		42C779611A5690FD00CC48DB /* FacebookSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FacebookSDK.framework; sourceTree = "<group>"; };
+		42C779621A5690FD00CC48DB /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Bolts.framework; sourceTree = "<group>"; };
+		42C779631A5690FD00CC48DB /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Parse.framework; sourceTree = "<group>"; };
+		42C779641A5690FD00CC48DB /* ParseCrashReporting.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ParseCrashReporting.framework; sourceTree = "<group>"; };
+		42C779651A5690FD00CC48DB /* ParseFacebookUtils.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ParseFacebookUtils.framework; sourceTree = "<group>"; };
+		42C779661A5690FD00CC48DB /* ParseUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ParseUI.framework; sourceTree = "<group>"; };
 		42CB3DDE1A19D2F700BB10DC /* wechat.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = wechat.png; sourceTree = "<group>"; };
 		42CB3DDF1A19D2F700BB10DC /* wechat@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "wechat@2x.png"; sourceTree = "<group>"; };
 		42D3D5D919F7481800B01A97 /* FACEBOOK.JPG */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = FACEBOOK.JPG; sourceTree = "<group>"; };
@@ -480,22 +503,28 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				42C779681A5690FD00CC48DB /* Bolts.framework in Frameworks */,
 				426587131A1B2E23002C0E93 /* MediaPlayer.framework in Frameworks */,
 				42223ED919B5615400F0D058 /* libz.1.1.3.dylib in Frameworks */,
 				42223ED719B5613300F0D058 /* Accounts.framework in Frameworks */,
 				42223ED519B5612B00F0D058 /* AdSupport.framework in Frameworks */,
 				42AD1EC019B071ED00277278 /* SystemConfiguration.framework in Frameworks */,
+				42C779691A5690FD00CC48DB /* Parse.framework in Frameworks */,
+				42C779671A5690FD00CC48DB /* FacebookSDK.framework in Frameworks */,
 				42AD1EBE19B071E700277278 /* StoreKit.framework in Frameworks */,
 				42AD1EBC19B071E100277278 /* Security.framework in Frameworks */,
 				42194096198743F7007E3C52 /* QuartzCore.framework in Frameworks */,
 				42AD1EBA19B071D500277278 /* MobileCoreServices.framework in Frameworks */,
 				42AD1EB819B071CE00277278 /* libz.dylib in Frameworks */,
 				42AD1ED819B42C4800277278 /* libsqlite3.0.dylib in Frameworks */,
+				42C7796B1A5690FD00CC48DB /* ParseFacebookUtils.framework in Frameworks */,
 				4219409819875527007E3C52 /* CoreLocation.framework in Frameworks */,
 				42193F931985FE08007E3C52 /* CoreGraphics.framework in Frameworks */,
 				42AD1EB619B071B400277278 /* CFNetwork.framework in Frameworks */,
 				42AD1EB419B071AC00277278 /* AudioToolbox.framework in Frameworks */,
+				42C7796C1A5690FD00CC48DB /* ParseUI.framework in Frameworks */,
 				42A4844619A47AA20079EAA0 /* Social.framework in Frameworks */,
+				42C7796A1A5690FD00CC48DB /* ParseCrashReporting.framework in Frameworks */,
 				42AD1EB219B0718C00277278 /* ParseFacebookUtils.framework in Frameworks */,
 				42194094198738E0007E3C52 /* MapKit.framework in Frameworks */,
 				42AD1EDC19B42E1200277278 /* Parse.framework in Frameworks */,
@@ -554,6 +583,12 @@
 		42193F8F1985FE08007E3C52 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				42C779611A5690FD00CC48DB /* FacebookSDK.framework */,
+				42C779621A5690FD00CC48DB /* Bolts.framework */,
+				42C779631A5690FD00CC48DB /* Parse.framework */,
+				42C779641A5690FD00CC48DB /* ParseCrashReporting.framework */,
+				42C779651A5690FD00CC48DB /* ParseFacebookUtils.framework */,
+				42C779661A5690FD00CC48DB /* ParseUI.framework */,
 				426587121A1B2E23002C0E93 /* MediaPlayer.framework */,
 				42223ED819B5615400F0D058 /* libz.1.1.3.dylib */,
 				42223ED619B5613300F0D058 /* Accounts.framework */,
@@ -857,6 +892,12 @@
 		42A95FDE1A032F1F002C0508 /* photo_lastest */ = {
 			isa = PBXGroup;
 			children = (
+				42854BD91A43E1B600FA66B7 /* login.png */,
+				42854BD71A43E0CC00FA66B7 /* signupbutton_up.png */,
+				42854BD51A43E08700FA66B7 /* signupbutton_down.png */,
+				42854BD11A43DF8900FA66B7 /* button_down.png */,
+				42854BD21A43DF8900FA66B7 /* button_up.png */,
+				42854BCB1A43D8B800FA66B7 /* loginbutton_up.png */,
 				422279881A28445800AA7915 /* icon-favorite_2.png */,
 				4222799E1A2B037400AA7915 /* tatoo_app_icon-76.png */,
 				4222799F1A2B037400AA7915 /* tatoo_app_icon-120.png */,
@@ -1048,7 +1089,6 @@
 				427D34A0199E076400814463 /* dropbox@2x.png in Resources */,
 				4222796D1A282BCF00AA7915 /* share.png in Resources */,
 				42A9600C1A032F41002C0508 /* m-icon-search.png in Resources */,
-				428E7C561A0086A900CA2C14 /* ICON.png in Resources */,
 				42A4913E19D506A700E4D65E /* Facebook.png in Resources */,
 				4222796A1A282BCF00AA7915 /* menu_home.png in Resources */,
 				420E2F6119F9EC3F00667E6C /* whatsapp.png in Resources */,
@@ -1085,6 +1125,7 @@
 				422279671A282BCF00AA7915 /* menu_allert.png in Resources */,
 				42A4918619E2375500E4D65E /* tattoo_3.jpg in Resources */,
 				426E920D1A31856E00361337 /* bar.png in Resources */,
+				42854BCC1A43D8B800FA66B7 /* loginbutton_up.png in Resources */,
 				42A960261A071AD2002C0508 /* view.png in Resources */,
 				4222795D1A282BCF00AA7915 /* female.png in Resources */,
 				422279871A2843DD00AA7915 /* icon-favorite_offf_1.png in Resources */,
@@ -1121,6 +1162,7 @@
 				422279791A283AC400AA7915 /* tattoo_splash_screen.png in Resources */,
 				422279A21A2B037400AA7915 /* tatoo_app_icon-120.png in Resources */,
 				42A9601A1A037BAE002C0508 /* bg-login@2x.png in Resources */,
+				42854BD81A43E0CC00FA66B7 /* signupbutton_up.png in Resources */,
 				422279661A282BCF00AA7915 /* menu_about.png in Resources */,
 				426587431A1C77EB002C0E93 /* sina-weibo.png in Resources */,
 				42A4913F19D506A700E4D65E /* FacebookDown.png in Resources */,
@@ -1130,6 +1172,7 @@
 				428E7C5A1A0087B800CA2C14 /* goldebackground@2x.jpg in Resources */,
 				420E2F6219F9EC3F00667E6C /* whatsapp@2X.png in Resources */,
 				42A960061A032F41002C0508 /* logo.png in Resources */,
+				42854BDA1A43E1B600FA66B7 /* login.png in Resources */,
 				42A9600D1A032F41002C0508 /* m-icon-tnc.png in Resources */,
 				428E7C5D1A008B5900CA2C14 /* loading.png in Resources */,
 				422279831A283D4300AA7915 /* dismiss_on.png in Resources */,
@@ -1149,12 +1192,14 @@
 				42065FC519EE29A80012628C /* goldebackground.jpg in Resources */,
 				428E7C531A00865000CA2C14 /* ICON@2x.png in Resources */,
 				426587441A1C77EB002C0E93 /* sina-weibo@2x.png in Resources */,
+				42854BD61A43E08700FA66B7 /* signupbutton_down.png in Resources */,
 				422279701A282BCF00AA7915 /* tattoo_splash_screen.jpg in Resources */,
 				421940A019878A7B007E3C52 /* background.jpg in Resources */,
 				422278C61A247C2500AA7915 /* image_loading.png in Resources */,
 				4265871B1A1B3E30002C0E93 /* login_bg.png in Resources */,
 				4222796E1A282BCF00AA7915 /* tattoo_login.jpg in Resources */,
 				427D34AA199E076400814463 /* more@2x.png in Resources */,
+				42854BD41A43DF8900FA66B7 /* button_up.png in Resources */,
 				427D34AD199E076400814463 /* pinterest.png in Resources */,
 				42A95FFA1A032F41002C0508 /* button-facebook-login.png in Resources */,
 				42A960021A032F41002C0508 /* icon-search.png in Resources */,
@@ -1176,6 +1221,7 @@
 				420E2F7D19FE282900667E6C /* image001.jpg in Resources */,
 				4265873F1A1C761C002C0E93 /* twitter.png in Resources */,
 				427D349D199E076400814463 /* close.png in Resources */,
+				42854BD31A43DF8900FA66B7 /* button_down.png in Resources */,
 				42EA4ECE19CAE1B20051057C /* Facebook-icon.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1354,7 +1400,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "TEQWIN_PROJECT/TEQWIN_PROJECT_Tattoo-Prefix.pch";
 				INFOPLIST_FILE = "TEQWIN_PROJECT/TEQWIN_PROJECT_Tattoo-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -1384,7 +1430,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "TEQWIN_PROJECT/TEQWIN_PROJECT_Tattoo-Prefix.pch";
 				INFOPLIST_FILE = "TEQWIN_PROJECT/TEQWIN_PROJECT_Tattoo-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",

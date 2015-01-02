@@ -40,7 +40,7 @@
     self.automaticallyAdjustsScrollViewInsets = NO;
     
     [ self.textview setFont:[UIFont fontWithName:@"Arial" size:12]];
-    self.textview.text=@"\nFormed in 2010 TeqHost & TeqApps group of company has been serving many HK, China, Macau and international business ranging from Commercial sector, retail , Education and Government organization.\nWe provide IOS/Android application and web solution using the latest and industry most widely adopted technology. Our team of designers, developers  has expertise on a diverse range of platform and toolkit such as (Apple, Android API, SEO,  Joomla, Drupal, Silverstripe, Wordpress, PHP, MySql, Magento, VirtueMart, Zencart , HTML5, Java script, Flash Animation, etc.). And our marketing professional are well equipped with the latest toolkits to ensure your digital platform effectively create and maintain the relationship with your target customer.";
+    self.textview.text=@"\nFormed in 2010 TeqHost & TeqApps group of company has been serving many HK, China, Macau and international business ranging from Commercial sector, retail , Education and Government organization.\nWe provide IOS/An application and web solution using the latest and industry most widely adopted technology. Our team of designers, developers  has expertise on a diverse range of platform and toolkit such as (Apple, An API, SEO,  Joomla, Drupal, Silverstripe, Wordpress, PHP, MySql, Magento, VirtueMart, Zencart , HTML5, Java script, Flash Animation, etc.). And our marketing professional are well equipped with the latest toolkits to ensure your digital platform effectively create and maintain the relationship with your target customer.";
 
     self.textview.layer.cornerRadius=8.0f;
     self.textview.layer.borderWidth=2.0;

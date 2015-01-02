@@ -5,7 +5,9 @@
 //  Created by Teqwin on 29/7/14.
 //  Copyright (c) 2014年 Teqwin. All rights reserved.
 //
-
+#import <Parse/Parse.h>
+#import <ParseUI/ParseUI.h>
+#import  <ParseFacebookUtils/PFFacebookUtils.h>
 #import <UIKit/UIKit.h>
 #import <MapKit/MapKit.h>
 #import "Tattoo_Master_Info.h"

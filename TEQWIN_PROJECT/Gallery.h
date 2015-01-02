@@ -20,7 +20,7 @@
     UITextView * test;
 UILabel *backtips;
     CGFloat lastDistance;
-	
+	 UIPinchGestureRecognizer *twoFingerPinch;
 	CGFloat imgStartWidth;
 	CGFloat imgStartHeight;
 }

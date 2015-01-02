@@ -202,49 +202,16 @@
     }
 
 }
--(void)filterResults:(NSString *)searchTerm scope:(NSString*)scope
-{
-    
-    [self.searchResults removeAllObjects];
-    
-    PFQuery *query = [PFQuery queryWithClassName:@"Tattoo_Master"];
-    //[query whereKey:@"Name" containsString:searchTerm];
-    query.cachePolicy=kPFCachePolicyCacheElseNetwork;
-    NSArray *results  = [query findObjects];
-    NSLog(@"%d",results.count);
-    
-    [self.searchResults addObjectsFromArray:results];
-    
-    NSPredicate *searchPredicate =
-    [NSPredicate predicateWithFormat:@"Name CONTAINS[cd]%@", searchTerm];
-    _searchResults = [NSMutableArray arrayWithArray:[results filteredArrayUsingPredicate:searchPredicate]];
-    
-    // if(![scope isEqualToString:@"全部"]) {
-    // Further filter the array with the scope
-    //   NSPredicate *resultPredicate = [NSPredicate predicateWithFormat:@"Gender contains[cd] %@", scope];
-    
-    //  _searchResults = [NSMutableArray arrayWithArray:[_searchResults filteredArrayUsingPredicate:resultPredicate]];
-}//}
-//當search 更新時， tableview 就會更新，無論scope select 咩
--(BOOL)searchDisplayController:(UISearchDisplayController *)controller shouldReloadTableForSearchString:(NSString *)searchTerm
-{
-    [self filterResults :searchTerm
-                   scope:[[self.searchDisplayController.searchBar scopeButtonTitles]
-                          objectAtIndex:[self.searchDisplayController.searchBar
-                                         selectedScopeButtonIndex]]];
-    
-    return YES;
-}
 - (void)queryParseMethod {
     NSLog(@"start query");
     
     PFQuery *query = [PFQuery queryWithClassName:@"Tattoo_Master"];
-    // query.cachePolicy = kPFCachePolicyCacheThenNetwork;
+     query.cachePolicy = kPFCachePolicyCacheThenNetwork;
    
     [query whereKey:@"Master_id" equalTo:self.tattoomasterCell.master_id];
     [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
         if ([objects count] == 0) {
-            query.cachePolicy = kPFCachePolicyCacheThenNetwork;
+
         }
         if (!error) {
             imageFilesArray = [[NSArray alloc] initWithArray:objects];
@@ -266,6 +233,7 @@
     
     PFQuery *query = [PFQuery queryWithClassName:@"Photo"];
     [query whereKey:@"Master_id" equalTo:self.tattoomasterCell.master_id];
+       [query orderByAscending:@"createdAt"];
      query.cachePolicy = kPFCachePolicyCacheThenNetwork;
     
     [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
@@ -277,7 +245,7 @@
                 imageFilesArray_image = [[NSArray alloc] initWithArray:objects];
                 
                 self.noimage.text=@"";
-                [query orderByAscending:@"createdAt"];
+            
                 
                 
                 [_imagesCollection reloadData];
@@ -392,6 +360,14 @@
             cell.detailTextLabel.font = [UIFont fontWithName:@"Helvetica-bold" size:15];
             cell.detailTextLabel.textColor=[UIColor whiteColor];
             cell.textLabel.text = @"Address：";
+            if ([self.tattoomasterCell.address isEqual:@""]) {
+                 cell.detailTextLabel.textColor =[UIColor colorWithRed:30.0/256.0 green:30.0/256.0 blue:30.0/256.0 alpha:1 ];
+            }
+            else
+            {
+             
+            }
+
             //cell.accessoryType=UITableViewCellAccessoryDisclosureIndicator;
            // cell.textLabel.lineBreakMode = UILineBreakModeWordWrap;
         }
@@ -406,6 +382,14 @@
             cell.detailTextLabel.textColor=[UIColor whiteColor];
             cell.textLabel.text = @"Website：";
             //cell.accessoryType=UITableViewCellAccessoryDetailButton;
+            if ([self.tattoomasterCell.website isEqual:@""]) {
+                              cell.detailTextLabel.textColor =[UIColor colorWithRed:30.0/256.0 green:30.0/256.0 blue:30.0/256.0 alpha:1 ];
+            }
+            else
+            {
+              
+            }
+
         }
             
             break;
@@ -419,6 +403,15 @@
             cell.detailTextLabel.textColor=[UIColor whiteColor];
             cell.textLabel.text = @"Email：";
             //cell.accessoryType=UITableViewCellAccessoryDetailButton;
+            if ([self.tattoomasterCell.email isEqual:@""]) {
+                              cell.detailTextLabel.textColor =[UIColor colorWithRed:30.0/256.0 green:30.0/256.0 blue:30.0/256.0 alpha:1 ];
+            }
+            else
+            {
+             
+            }
+            
+
         }
             
             break;
@@ -433,6 +426,15 @@
              cell.detailTextLabel.textColor=[UIColor whiteColor];
             cell.textLabel.text = @"Telephone：";
             //cell.accessoryType=UITableViewCellAccessoryDetailButton;
+            if ([self.tattoomasterCell.tel isEqual:@""]) {
+                              cell.detailTextLabel.textColor =[UIColor colorWithRed:30.0/256.0 green:30.0/256.0 blue:30.0/256.0 alpha:1 ];
+            }
+            else
+            {
+             
+            }
+            
+
         }
             
             break;
@@ -546,22 +548,39 @@
     
     switch (indexPath.row) {
                case 0:{
+                   if ([self.tattoomasterCell.address  isEqual:@""]) {
+                       NSLog(@"disabled");
+                       
+                   }
+                   else{
+
             Map_ViewController * mapVC = [self.storyboard instantiateViewControllerWithIdentifier:@"Map_ViewController"];
             [self.navigationController pushViewController:mapVC animated:YES];
             mapVC.tattoomasterCell=_tattoomasterCell;
             NSLog(@"%@%@",self.tattoomasterCell.latitude,self.tattoomasterCell.longitude);
-        }
+                   }}
             break;
         case 1:{
-            
+            if ([self.tattoomasterCell.website  isEqual:@""]) {
+                NSLog(@"disabled");
+                
+            }
+            else{
+
             NSURL *url = [NSURL URLWithString:self.tattoomasterCell.website ];
             [[UIApplication sharedApplication] openURL:url];
-        }
+            }}
             break;
         case 2:
             //Create the MailComposeViewController
             
         {
+            if ([self.tattoomasterCell.email  isEqual:@""]) {
+                NSLog(@"disabled");
+                
+            }
+            else{
+
             MFMailComposeViewController *Composer = [[MFMailComposeViewController alloc]init];
             
             Composer.mailComposeDelegate = self;
@@ -587,13 +606,19 @@
             //Present it on the screen
             
             [self presentViewController:Composer animated:YES completion:nil];
-            
-            break;}
+            }}
+                break;
             
             //make alert box and phonecall function
         case 3:
-        {
             
+        {
+            if ([self.tattoomasterCell.tel  isEqual:@""]) {
+                NSLog(@"disabled");
+                
+            }
+            else{
+
             UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"撥號"
                                                             message:@"確定要撥號嗎？"
                                                            delegate:self
@@ -603,7 +628,7 @@
             
             [alert show];
             
-            
+            }
             
         }
             break;
