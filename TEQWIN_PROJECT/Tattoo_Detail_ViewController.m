@@ -64,7 +64,8 @@
     }
    //self.view_count.text =[NSString stringWithFormat:@"%d",self.tattoomasterCell.view.count    ]   ;
     self.description_textview.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"background.jpg"]];
-    if (self.tattoomasterCell.description ==nil) {
+
+    if (self.tattoomasterCell.desc ==nil ||[self.tattoomasterCell.desc  isEqual:@""] ) {
         self.description_textview.text = @"沒有簡介";
     }
     else{
@@ -310,7 +311,7 @@
 
 - (CGFloat) tableView: (UITableView*) tableView heightForRowAtIndexPath: (NSIndexPath*) indexPath
 { NSString *cellText = [list objectAtIndex:indexPath.row];
-    UIFont *cellFont = [UIFont fontWithName:@"Helvetica" size:17.0];
+    UIFont *cellFont = [UIFont fontWithName:@"Weibei TC" size:17.0];
     NSAttributedString *attributedText =
     [[NSAttributedString alloc]
      initWithString:cellText
@@ -321,7 +322,7 @@
     CGRect rect = [attributedText boundingRectWithSize:CGSizeMake(tableView.bounds.size.width, CGFLOAT_MAX)
                                                options:NSStringDrawingUsesLineFragmentOrigin
                                                context:nil];
-    return rect.size.height + 20;
+    return rect.size.height + 10;
 
 
   }
@@ -457,12 +458,19 @@
     }
                cell.textLabel.textColor=[UIColor whiteColor];
     cell.detailTextLabel.text =[list objectAtIndex:indexPath.row];
-    
+        cell.textLabel.font = [UIFont fontWithName:@"Weibei TC" size:14];
+        cell.detailTextLabel.font = [UIFont fontWithName:@"Weibei TC" size:14];
+
     cell.contentView.backgroundColor = [UIColor blackColor];
 
 
    
     }
+    cell.selectionStyle = UITableViewCellSelectionStyleBlue;
+    //cell.backgroundColor =[UIColor clearColor];
+    UIView *bgColorView = [[UIView alloc] init];
+    bgColorView.backgroundColor =  [[UIColor colorWithRed:85.0/256.0 green:85.0/256.0 blue:85.0/256.0 alpha:1 ]colorWithAlphaComponent:0.5f];
+    [cell setSelectedBackgroundView:bgColorView];
 
 
     return cell;
