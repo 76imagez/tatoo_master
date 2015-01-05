@@ -59,7 +59,7 @@
     self.navigationItem.backBarButtonItem = backButton;
 
     [self queryParseMethod];
-    [self queryParseMethod_1];
+   // [self queryParseMethod_1];
     // scroll search bar out of sight
     UICollectionViewFlowLayout *flowLayout = [[UICollectionViewFlowLayout alloc] init];
     flowLayout.scrollDirection = UICollectionViewScrollDirectionHorizontal;

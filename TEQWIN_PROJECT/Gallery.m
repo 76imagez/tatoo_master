@@ -206,7 +206,14 @@ NSLog(@"%@", imageFilesArray);
     [ cell.image addGestureRecognizer:[[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(actionTap:)]];
     
     image_desc = (UILabel*) [cell viewWithTag:199];
-    image_desc.text = [imageObject objectForKey:@"image_desc"];
+    if ([imageObject objectForKey:@"image_desc"] ==nil ||[[imageObject objectForKey:@"image_desc"]  isEqual:@""] ) {
+        image_desc.text = @"　　";
+    }
+    else{
+        image_desc.text= [imageObject objectForKey:@"image_desc"];
+    }
+
+
     
         return cell;
 }

@@ -43,7 +43,23 @@
     PFInstallation *currentInstallation = [PFInstallation currentInstallation];
     
     [currentInstallation saveInBackground];
-
+    PFQuery *query = [PFQuery queryWithClassName:@"Tattoo_Master"];
+    query.cachePolicy = kPFCachePolicyNetworkElseCache;
+    [query whereKey:@"Master_id" equalTo:@"1"];
+    [query whereKey:@"update_allert" equalTo:[NSNumber numberWithBool:YES]];
+    [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
+        if ([objects count] == 0) {
+        }
+        else
+        {
+            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"下載最新版本"
+                                                            message:@"需要前往App Store嗎？"
+                                                           delegate:self
+                                                  cancelButtonTitle:@"取消"
+                                                  otherButtonTitles:@"前往",nil];
+            
+            [alert show];
+        }}];
     // If you would like all objects to be private by default, remove this line.
 
 
@@ -84,7 +100,19 @@ didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken
                         withSession:[PFFacebookUtils session]];
 }
 
-
+-(void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
+{
+    NSString *button = [alertView buttonTitleAtIndex:buttonIndex];
+ 
+    if([button isEqualToString:@"前往"])
+    {
+        NSURL *itunesURL = [NSURL URLWithString:@"itms-apps://itunes.apple.com/app/id946737069"];
+        [[UIApplication sharedApplication] openURL:itunesURL];
+        
+        
+    }
+    
+}
 - (void)applicationDidBecomeActive:(UIApplication *)application {
     /*
      Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
