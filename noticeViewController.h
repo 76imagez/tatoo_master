@@ -10,11 +10,9 @@
 
 @interface noticeViewController : ViewController
 
-@property (weak, nonatomic) IBOutlet UITextView *textview;
+
 @property (weak, nonatomic) IBOutlet UITextView *textview_1;
-@property (weak, nonatomic) IBOutlet UITextView *textview_2;
-@property (weak, nonatomic) IBOutlet UITextView *textview_3;
-@property (weak, nonatomic) IBOutlet UITextView *textview_4;
+
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *sidebarButton;
 
 @end
