@@ -323,7 +323,7 @@ query = [PFQuery queryWithClassName:self.parseClassName];
         
         UILabel *nameLabel = (UILabel*) [cell viewWithTag:101];
         nameLabel.text = [object objectForKey:@"Name"];
-          nameLabel.font = [UIFont fontWithName:@"Weibei TC" size:17];
+        
         UILabel *prepTimeLabel = (UILabel*) [cell viewWithTag:102];
         prepTimeLabel.text = [object objectForKey:@"Gender"];
         
@@ -332,14 +332,7 @@ query = [PFQuery queryWithClassName:self.parseClassName];
         count_like.text = [NSString stringWithFormat:@"%d",count.count];
         
         UILabel *master_desc = (UILabel*) [cell viewWithTag:187];
-        if ([object objectForKey:@"description"] ==nil ||[[object objectForKey:@"description"]  isEqual:@""] ) {
-            master_desc.text = @"沒有簡介";
-        }
-        else{
-           master_desc.text=[object objectForKey:@"description"];
-              master_desc.font = [UIFont fontWithName:@"Weibei TC" size:12];
-        }
-
+        master_desc.text = [object objectForKey:@"description"];
         
         sex_statues = (PFImageView*)[cell viewWithTag:177];
         if ([[object objectForKey:@"Gender"]isEqualToString:@"男"]) {
@@ -406,12 +399,7 @@ query = [PFQuery queryWithClassName:self.parseClassName];
         cell.detailTextLabel.text =[object objectForKey:@"Gender"];
         
     }
-    cell.selectionStyle = UITableViewCellSelectionStyleBlue;
-    //cell.backgroundColor =[UIColor clearColor];
-    UIView *bgColorView = [[UIView alloc] init];
-    bgColorView.backgroundColor =  [[UIColor colorWithRed:85.0/256.0 green:85.0/256.0 blue:85.0/256.0 alpha:1 ]colorWithAlphaComponent:0.5f];
-    [cell setSelectedBackgroundView:bgColorView];
-
+    
     return cell;
     
 }
