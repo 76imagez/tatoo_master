@@ -96,15 +96,6 @@
 		422279A31A2B037400AA7915 /* tatoo_app_icon-152.png in Resources */ = {isa = PBXBuildFile; fileRef = 422279A01A2B037400AA7915 /* tatoo_app_icon-152.png */; };
 		42317A6919B709FC00C54F54 /* teqwin_logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 42317A6819B709FC00C54F54 /* teqwin_logo.png */; };
 		424FACE4198A2EDC0062D13D /* navigationicon.png in Resources */ = {isa = PBXBuildFile; fileRef = 424FACE3198A2EDC0062D13D /* navigationicon.png */; };
-		424FB9341A5CCE590034635C /* Cell.m in Sources */ = {isa = PBXBuildFile; fileRef = 424FB9331A5CCE590034635C /* Cell.m */; };
-		424FB93C1A5CCE740034635C /* FolderCoverView.m in Sources */ = {isa = PBXBuildFile; fileRef = 424FB9371A5CCE740034635C /* FolderCoverView.m */; };
-		424FB93D1A5CCE740034635C /* UIFolderTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 424FB9391A5CCE740034635C /* UIFolderTableView.m */; };
-		424FB93E1A5CCE740034635C /* UIView+screenshot.m in Sources */ = {isa = PBXBuildFile; fileRef = 424FB93B1A5CCE740034635C /* UIView+screenshot.m */; };
-		424FB9431A5CCF0E0034635C /* DownAccessory.png in Resources */ = {isa = PBXBuildFile; fileRef = 424FB93F1A5CCF0E0034635C /* DownAccessory.png */; };
-		424FB9441A5CCF0E0034635C /* DownAccessory@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 424FB9401A5CCF0E0034635C /* DownAccessory@2x.png */; };
-		424FB9451A5CCF0E0034635C /* UpAccessory.png in Resources */ = {isa = PBXBuildFile; fileRef = 424FB9411A5CCF0E0034635C /* UpAccessory.png */; };
-		424FB9461A5CCF0E0034635C /* UpAccessory@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 424FB9421A5CCF0E0034635C /* UpAccessory@2x.png */; };
-		424FB9491A5CCF1D0034635C /* SubCateViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 424FB9481A5CCF1D0034635C /* SubCateViewController.m */; };
 		42630059199071F3007B8C8F /* Map_ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 42630058199071F3007B8C8F /* Map_ViewController.m */; };
 		426587131A1B2E23002C0E93 /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 426587121A1B2E23002C0E93 /* MediaPlayer.framework */; };
 		426587171A1B3C0C002C0E93 /* tatoo_splash.png in Resources */ = {isa = PBXBuildFile; fileRef = 426587161A1B3C0C002C0E93 /* tatoo_splash.png */; };
@@ -355,20 +346,6 @@
 		422279A01A2B037400AA7915 /* tatoo_app_icon-152.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tatoo_app_icon-152.png"; sourceTree = "<group>"; };
 		42317A6819B709FC00C54F54 /* teqwin_logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = teqwin_logo.png; sourceTree = "<group>"; };
 		424FACE3198A2EDC0062D13D /* navigationicon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = navigationicon.png; sourceTree = "<group>"; };
-		424FB9321A5CCE590034635C /* Cell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Cell.h; sourceTree = "<group>"; };
-		424FB9331A5CCE590034635C /* Cell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Cell.m; sourceTree = "<group>"; };
-		424FB9361A5CCE740034635C /* FolderCoverView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FolderCoverView.h; sourceTree = "<group>"; };
-		424FB9371A5CCE740034635C /* FolderCoverView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FolderCoverView.m; sourceTree = "<group>"; };
-		424FB9381A5CCE740034635C /* UIFolderTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIFolderTableView.h; sourceTree = "<group>"; };
-		424FB9391A5CCE740034635C /* UIFolderTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIFolderTableView.m; sourceTree = "<group>"; };
-		424FB93A1A5CCE740034635C /* UIView+screenshot.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+screenshot.h"; sourceTree = "<group>"; };
-		424FB93B1A5CCE740034635C /* UIView+screenshot.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+screenshot.m"; sourceTree = "<group>"; };
-		424FB93F1A5CCF0E0034635C /* DownAccessory.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = DownAccessory.png; sourceTree = "<group>"; };
-		424FB9401A5CCF0E0034635C /* DownAccessory@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "DownAccessory@2x.png"; sourceTree = "<group>"; };
-		424FB9411A5CCF0E0034635C /* UpAccessory.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = UpAccessory.png; sourceTree = "<group>"; };
-		424FB9421A5CCF0E0034635C /* UpAccessory@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "UpAccessory@2x.png"; sourceTree = "<group>"; };
-		424FB9471A5CCF1D0034635C /* SubCateViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SubCateViewController.h; sourceTree = "<group>"; };
-		424FB9481A5CCF1D0034635C /* SubCateViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SubCateViewController.m; sourceTree = "<group>"; };
 		42630057199071F3007B8C8F /* Map_ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Map_ViewController.h; path = ../Map_ViewController.h; sourceTree = "<group>"; };
 		42630058199071F3007B8C8F /* Map_ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Map_ViewController.m; path = ../Map_ViewController.m; sourceTree = "<group>"; };
 		426587121A1B2E23002C0E93 /* MediaPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaPlayer.framework; path = System/Library/Frameworks/MediaPlayer.framework; sourceTree = SDKROOT; };
@@ -574,7 +551,6 @@
 		42193F841985FE08007E3C52 = {
 			isa = PBXGroup;
 			children = (
-				424FB9311A5CCE4D0034635C /* CELL */,
 				426587291A1C3397002C0E93 /* Resources */,
 				42193FC81985FE42007E3C52 /* SWRevealViewController.m */,
 				42193FC71985FE42007E3C52 /* SWRevealViewController.h */,
@@ -758,35 +734,6 @@
 				42193FA61985FE08007E3C52 /* ViewController.m */,
 			);
 			name = "SideBar & Main";
-			sourceTree = "<group>";
-		};
-		424FB9311A5CCE4D0034635C /* CELL */ = {
-			isa = PBXGroup;
-			children = (
-				424FB9471A5CCF1D0034635C /* SubCateViewController.h */,
-				424FB9481A5CCF1D0034635C /* SubCateViewController.m */,
-				424FB93F1A5CCF0E0034635C /* DownAccessory.png */,
-				424FB9401A5CCF0E0034635C /* DownAccessory@2x.png */,
-				424FB9411A5CCF0E0034635C /* UpAccessory.png */,
-				424FB9421A5CCF0E0034635C /* UpAccessory@2x.png */,
-				424FB9351A5CCE640034635C /* Folder */,
-				424FB9321A5CCE590034635C /* Cell.h */,
-				424FB9331A5CCE590034635C /* Cell.m */,
-			);
-			name = CELL;
-			sourceTree = "<group>";
-		};
-		424FB9351A5CCE640034635C /* Folder */ = {
-			isa = PBXGroup;
-			children = (
-				424FB9361A5CCE740034635C /* FolderCoverView.h */,
-				424FB9371A5CCE740034635C /* FolderCoverView.m */,
-				424FB9381A5CCE740034635C /* UIFolderTableView.h */,
-				424FB9391A5CCE740034635C /* UIFolderTableView.m */,
-				424FB93A1A5CCE740034635C /* UIView+screenshot.h */,
-				424FB93B1A5CCE740034635C /* UIView+screenshot.m */,
-			);
-			name = Folder;
 			sourceTree = "<group>";
 		};
 		42630028198B3A72007B8C8F /* photo */ = {
@@ -1125,7 +1072,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				424FB9431A5CCF0E0034635C /* DownAccessory.png in Resources */,
 				426587381A1C53B5002C0E93 /* WeibeiTC-Bold.otf in Resources */,
 				42193FD119860221007E3C52 /* menu.png in Resources */,
 				42A960071A032F41002C0508 /* m-icon-about.png in Resources */,
@@ -1138,7 +1084,6 @@
 				422279691A282BCF00AA7915 /* menu_history.png in Resources */,
 				42A960001A032F41002C0508 /* icon-like.png in Resources */,
 				428E7C611A00C2BD00CA2C14 /* tattoo_icon.jpg in Resources */,
-				424FB9451A5CCF0E0034635C /* UpAccessory.png in Resources */,
 				422278CC1A247EDC00AA7915 /* load_phot.png in Resources */,
 				427D349E199E076400814463 /* close@2x.png in Resources */,
 				427D34A0199E076400814463 /* dropbox@2x.png in Resources */,
@@ -1172,7 +1117,6 @@
 				42A960081A032F41002C0508 /* m-icon-favorite.png in Resources */,
 				42A9600A1A032F41002C0508 /* m-icon-login.png in Resources */,
 				42A95FDC1A02335C002C0508 /* teqapps_logo_ai_G.png in Resources */,
-				424FB9441A5CCF0E0034635C /* DownAccessory@2x.png in Resources */,
 				426ED3D219C02C740024E817 /* Main.storyboard in Resources */,
 				422279761A2836FC00AA7915 /* icon-favorite_off_2.png in Resources */,
 				427D34A1199E076400814463 /* evernote.png in Resources */,
@@ -1261,7 +1205,6 @@
 				42A960021A032F41002C0508 /* icon-search.png in Resources */,
 				426587401A1C761C002C0E93 /* twitter@2x.png in Resources */,
 				427D34A5199E076400814463 /* google_drive.png in Resources */,
-				424FB9461A5CCF0E0034635C /* UpAccessory@2x.png in Resources */,
 				422278CA1A247E4400AA7915 /* loading_photo.png in Resources */,
 				42A4913D19D506A700E4D65E /* ExitDown.png in Resources */,
 				42A95FFF1A032F41002C0508 /* icon-gallery.png in Resources */,
@@ -1304,25 +1247,20 @@
 				4219408A198654A7007E3C52 /* Tattoo_Master_Info.m in Sources */,
 				420E2F7819FE225900667E6C /* aboutus_map.m in Sources */,
 				427D34B9199E079E00814463 /* ShareViewController.m in Sources */,
-				424FB9491A5CCF1D0034635C /* SubCateViewController.m in Sources */,
 				42AF211A19EBC6D000FC3BEC /* ImageExampleCell.m in Sources */,
 				4265874A1A1C89D0002C0E93 /* Line.m in Sources */,
 				42A4918019E2370C00E4D65E /* noticeViewController.m in Sources */,
-				424FB93D1A5CCE740034635C /* UIFolderTableView.m in Sources */,
 				42DB2C541A0A0A79002BAF1B /* news_detail_ViewController.m in Sources */,
-				424FB93C1A5CCE740034635C /* FolderCoverView.m in Sources */,
 				426ED3F819C2C3D00024E817 /* VPImageCropperViewController.m in Sources */,
 				426ED39319B9AF560024E817 /* TattooMasterCell.m in Sources */,
 				42193FCE1985FECF007E3C52 /* MainViewController.m in Sources */,
 				427D3B2F19A32B9E00814463 /* LoginUIViewController.m in Sources */,
 				42193FA11985FE08007E3C52 /* AppDelegate.m in Sources */,
 				42A4917D19E2370300E4D65E /* historyViewController.m in Sources */,
-				424FB93E1A5CCE740034635C /* UIView+screenshot.m in Sources */,
 				426864671A1450BB0043582C /* news_ViewController.m in Sources */,
 				42193FD619860291007E3C52 /* TattooMaster_ViewController.m in Sources */,
 				426ED3E919C04A030024E817 /* MBProgressHUD.m in Sources */,
 				42630059199071F3007B8C8F /* Map_ViewController.m in Sources */,
-				424FB9341A5CCE590034635C /* Cell.m in Sources */,
 				420E2F6F19FDFB8900667E6C /* aboutusViewController.m in Sources */,
 				42223EDF19B5677F00F0D058 /* MySignUpViewController.m in Sources */,
 				420E2F7B19FE246200667E6C /* aboutus_map_detail.m in Sources */,
