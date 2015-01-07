@@ -692,7 +692,7 @@
                                 </constraints>
                                 <color key="separatorColor" red="0.78666322969543145" green="0.62993444102205431" blue="0.30476649491762386" alpha="1" colorSpace="calibratedRGB"/>
                                 <color key="sectionIndexBackgroundColor" red="0.0037872779190000001" green="0.0037872779190000001" blue="0.0037872779190000001" alpha="1" colorSpace="calibratedRGB"/>
-                                <color key="sectionIndexTrackingBackgroundColor" patternImage="4BDE2593-D36F-4C70-BCD1-3EFEBD806473" colorSpace="pattern"/>
+                                <color key="sectionIndexTrackingBackgroundColor" patternImage="76102F72-4068-419A-A3BF-7725B02E7C1C" colorSpace="pattern"/>
                                 <textView key="tableFooterView" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" indicatorStyle="white" editable="NO" textAlignment="center" id="hmc-bC-egn">
                                     <rect key="frame" x="0.0" y="0.0" width="320" height="112"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -1096,13 +1096,13 @@
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3zq-zQ-qJ2">
                                 <rect key="frame" x="16" y="20" width="288" height="464"/>
                                 <color key="backgroundColor" red="1" green="0.93828407248566892" blue="0.024225370076700004" alpha="0.10000000000000001" colorSpace="calibratedRGB"/>
-                                <mutableString key="text">第一、刺青之後的三到五個小時之內，用溫水來清洗身體，把表面多餘的顏料或者是滲出的血液擦去，請記住，這一個步驟十分重要，如果時間過早，則會容易讓皮膚下層的顏料淡化，如果時間過長，滲出的血液不容易擦掉，而且以後每天要注意清洗，保持皮膚的乾淨和清潔，這樣會讓刺青的顏色起到很好的保護。
+                                <string key="text">第一、刺青之後的三到五個小時之內，用溫水來清洗身體，把表面多餘的顏料或者是滲出的血液擦去，請記住，這一個步驟十分重要，如果時間過早，則會容易讓皮膚下層的顏料淡化，如果時間過長，滲出的血液不容易擦掉，而且以後每天要注意清洗，保持皮膚的乾淨和清潔，這樣會讓刺青的顏色起到很好的保護。
 
 第二、不要使用任何的藥品或者藥膏來塗抹，有一些人往往擔心自己的皮膚出現感染或者其他的證狀，所以就會自主的使用一些藥膏來塗抹，因爲有化學成分的一些藥膏會對於刺青的顏色形成一定的傷害，最後破壞掉整體的美觀性。
 
 第三、不能在刺青之後的一個星期之內進行長時間浸水的接觸，比如泡澡、桑拿等等，這個時候，皮膚下面的的色素還沒有完全固定，容易隨著水的滲入而產生變化，另外也不可以曬太陽。
 
-第四、不可對皮膚任何的抓撓行爲，有些人的皮膚往往會在刺青之後的三到四天之內，出現癢的現象，請不要擔心，這是皮膚的正常反應，一般兩天之後就會消失，一定不能抓，也不能撓。</mutableString>
+第四、不可對皮膚任何的抓撓行爲，有些人的皮膚往往會在刺青之後的三到四天之內，出現癢的現象，請不要擔心，這是皮膚的正常反應，一般兩天之後就會消失，一定不能抓，也不能撓。</string>
                                 <color key="textColor" red="0.96888123550000005" green="0.9681501428" blue="0.97574952410000004" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
@@ -1605,7 +1605,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="4BDE2593-D36F-4C70-BCD1-3EFEBD806473" width="320" height="460">
+        <image name="76102F72-4068-419A-A3BF-7725B02E7C1C" width="320" height="460">
             <mutableData key="keyedArchiveRepresentation">
 YnBsaXN0MDDUAQIDBAUGPj9YJHZlcnNpb25YJG9iamVjdHNZJGFyY2hpdmVyVCR0b3ASAAGGoK4HCBMU
 GR4fIyQsLzI4O1UkbnVsbNUJCgsMDQ4PEBESVk5TU2l6ZVYkY2xhc3NcTlNJbWFnZUZsYWdzVk5TUmVw
