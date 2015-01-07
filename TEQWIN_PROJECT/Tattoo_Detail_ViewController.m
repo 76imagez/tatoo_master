@@ -47,8 +47,6 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-  //  NSLog(@"ffff%f",self.imagesCollection.frame.size.height);
-
     
        UIBarButtonItem *backButton = [[UIBarButtonItem alloc] initWithTitle:@"" style:UIBarButtonItemStyleBordered target:nil action:nil];
     self.navigationItem.backBarButtonItem = backButton;
@@ -87,14 +85,7 @@
     [ self.description_textview sizeToFit];
     [self.description_textview setScrollEnabled:NO];
     [self.description_textview setEditable:NO];
-    
-    UICollectionViewFlowLayout *flowLayout = [[UICollectionViewFlowLayout alloc] init];
-    flowLayout.scrollDirection = UICollectionViewScrollDirectionVertical;
-    [self.imagesCollection setCollectionViewLayout:flowLayout];
-    flowLayout.itemSize = CGSizeMake(70, 70);
-
-    
-    
+       
     self.title =self.tattoomasterCell.name;
     self.count_like.text =[NSString stringWithFormat:@"%lu likes",(unsigned long)self.tattoomasterCell.favorites.count    ]   ;
     if ([self.tattoomasterCell.gender isEqualToString:@"男"]) {
@@ -126,10 +117,15 @@
     //NSLog(@"dddd%@",self.tattoomasterCell.name);
     self.profileimage.file=self.tattoomasterCell.imageFile;
     self.profileimage.layer.cornerRadius =self.profileimage.frame.size.width / 2;
-    self.profileimage.layer.borderWidth = 3.0f;
+    self.profileimage.layer.borderWidth = 1.0f;
     self.profileimage.layer.borderColor = [UIColor whiteColor].CGColor;
     self.profileimage.clipsToBounds = YES;
     _tableView.bounces=YES;
+    UICollectionViewFlowLayout *flowLayout = [[UICollectionViewFlowLayout alloc] init];
+    flowLayout.scrollDirection = UICollectionViewScrollDirectionVertical;
+    [self.imagesCollection setCollectionViewLayout:flowLayout];
+    flowLayout.itemSize = CGSizeMake(80, 80);
+    [flowLayout setSectionInset:UIEdgeInsetsMake(15, 10, 10,50)];
 
     // Set the gesture
     [self.view addGestureRecognizer:self.revealViewController.panGestureRecognizer];
@@ -151,8 +147,7 @@
     
     // Set the gesture
     [self.view addGestureRecognizer:self.revealViewController.panGestureRecognizer];
-    
-}
+   }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
 {
@@ -256,7 +251,11 @@
     return 1;
 }
 
-
+//定义每个UICollectionView 的大小
+- (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath
+{
+    return CGSizeMake(80 ,80);
+}
 -(NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
     return [imageFilesArray_image count];
 }
@@ -276,7 +275,7 @@
     [imageFile getDataInBackgroundWithBlock:^(NSData *data, NSError *error) {
         if (!error) {
             
-            CGSize itemSize = CGSizeMake(50, 50);
+            CGSize itemSize = CGSizeMake(80, 80);
             UIGraphicsBeginImageContextWithOptions(itemSize, NO, UIScreen.mainScreen.scale);
             CGRect imageRect = CGRectMake(0.0, 0.0, itemSize.width, itemSize.height);
             [ cell.parseImage.image drawInRect:imageRect];
@@ -295,14 +294,14 @@
      
             rectangle = self.imagesCollection.frame;
             rectangle.size = [self.imagesCollection.collectionViewLayout collectionViewContentSize];
-            
+           
             self.imagesCollection.frame=rectangle;
           
-             [ self.imagesCollection sizeToFit];
+          //   [ self.imagesCollection sizeToFit];
             
             
             if ([UIScreen mainScreen].bounds.size.height ==480) {
-                [self.scrollView setContentSize:CGSizeMake(320,  +350+self.description_textview.contentSize.height+rectangle.size.height)];
+                [self.scrollView setContentSize:CGSizeMake(320,  +450+self.description_textview.contentSize.height+rectangle.size.height)];
               
                 NSLog(@"rectangle%f",rectangle.size.height);
                  NSLog(@"frame%f",self.description_textview.contentSize.height);
@@ -519,10 +518,13 @@
     return (action == @selector(copy:));
     
 }
-//-(UIEdgeInsets)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout insetForSectionAtIndex:(NSInteger)section
-//{
-   // return UIEdgeInsetsMake(1, 1, 1, 1);
-//}
+- (CGFloat)collectionView:(UICollectionView *)collectionView layout:(UICollectionView *)collectionViewLayout minimumInteritemSpacingForSectionAtIndex:(NSInteger)section
+{
+    return 10; // This is the minimum inter item spacing, can be more
+}
+
+
+
 
 - (void)tableView:(UITableView *)tableView performAction:(SEL)action forRowAtIndexPath:(NSIndexPath *)indexPath withSender:(id)sender
 {
