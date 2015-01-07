@@ -12,19 +12,25 @@
 #import "SWRevealViewController.h"
 #import "TattooMaster_ViewController.h"
 #import "Master_Map_ViewController.h"
-
+#import "Cell.h"
+#import "SubCateViewController.h"
 
 #import "Map_ViewController.h"
 #import "LoginUIViewController.h"
 @import CoreData;
-@interface Tattoo_Detail_ViewController ()
+@interface Tattoo_Detail_ViewController ()<UITableViewDataSource,UITableViewDelegate,UIFolderTableViewDelegate>
 
 {
     int lastClickedRow;
     CGRect frame_first;
     UIImageView *fullImageView;
-    
+ 
 }
+@property (strong, nonatomic) SubCateViewController *subVc;
+@property (strong, nonatomic) NSDictionary *currentCate;
+@property (assign)BOOL isOpen;
+@property (nonatomic,retain)NSIndexPath *selectIndex;
+@property (nonatomic) CGSize itemSize;
 @property (nonatomic, strong) UISearchDisplayController *searchController;
 @property (nonatomic, strong) NSMutableArray *searchResults;
 @end
@@ -46,11 +52,11 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-   
+    self.isOpen = NO;
     UIBarButtonItem *backButton = [[UIBarButtonItem alloc] initWithTitle:@"" style:UIBarButtonItemStyleBordered target:nil action:nil];
     self.navigationItem.backBarButtonItem = backButton;
-    
-    
+
+
     
     NSDictionary *dimensions = @{ @"name":self.tattoomasterCell.name};
     [PFAnalytics trackEvent:@"showmaster" dimensions:dimensions];
@@ -79,15 +85,29 @@
     CGRect frame =  self.description_textview.frame;
     frame.size.height =  self.description_textview.contentSize.height;
     self.description_textview.frame = frame;
-[ self.description_textview sizeToFit];
+    [ self.description_textview sizeToFit];
     [self.description_textview setScrollEnabled:YES];
+
+    NSLog(@"hehe%f",self.description_textview.frame.size.height);
+    if ([UIScreen mainScreen].bounds.size.height ==480) {
+        [self.scrollView setContentSize:CGSizeMake(320,510+ self.description_textview.frame.size.height)];
+    }
+    else
+    {
+        [self.scrollView setContentSize:CGSizeMake(320,700+  self.description_textview.frame.size.height)];
+        
+    }
     
-   
-    
-    UICollectionViewFlowLayout *flowLayout = [[UICollectionViewFlowLayout alloc] init];
-    flowLayout.scrollDirection = UICollectionViewScrollDirectionHorizontal;
+    flowLayout = [[UICollectionViewFlowLayout alloc] init];
+    flowLayout.scrollDirection = UICollectionViewScrollDirectionVertical;
      [self.imagesCollection setCollectionViewLayout:flowLayout];
     flowLayout.itemSize = CGSizeMake(70, 70);
+  
+    
+    NSLog(@"%f",self.imagesCollection.contentSize.height);
+    
+    
+    
     self.title =self.tattoomasterCell.name;
     self.count_like.text =[NSString stringWithFormat:@"%lu likes",(unsigned long)self.tattoomasterCell.favorites.count    ]   ;
     if ([self.tattoomasterCell.gender isEqualToString:@"男"]) {
@@ -142,7 +162,7 @@
     list =[[NSMutableArray alloc]init];
    
     
-
+     [list addObject:[NSString stringWithFormat:@"%@",self.tattoomasterCell.desc]];
     [list addObject:[NSString stringWithFormat:@"%@",self.tattoomasterCell.address]];
     [list addObject:[NSString stringWithFormat:@"%@",self.tattoomasterCell.website]];
     [list addObject:[NSString stringWithFormat:@"%@",self.tattoomasterCell.email]];
@@ -160,6 +180,7 @@
     [self.view addGestureRecognizer:self.revealViewController.panGestureRecognizer];
 
 }
+
 
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
 {
@@ -281,6 +302,11 @@
             UIGraphicsBeginImageContextWithOptions(itemSize, NO, UIScreen.mainScreen.scale);
             CGRect imageRect = CGRectMake(0.0, 0.0, itemSize.width, itemSize.height);
             [ cell.parseImage.image drawInRect:imageRect];
+            cell.parseImage.layer.cornerRadius= cell.parseImage.frame.size.width / 2;
+            cell.parseImage.layer.borderWidth=1.0;
+            cell.parseImage.layer.masksToBounds = YES;
+            cell.parseImage.layer.borderColor=[[UIColor whiteColor] CGColor];
+
             cell.parseImage.image = UIGraphicsGetImageFromCurrentImageContext();
             UIGraphicsEndImageContext() ;
             //  UIGraphicsEndImageContext();
@@ -310,21 +336,7 @@
 
 
 - (CGFloat) tableView: (UITableView*) tableView heightForRowAtIndexPath: (NSIndexPath*) indexPath
-{ NSString *cellText = [list objectAtIndex:indexPath.row];
-    UIFont *cellFont = [UIFont fontWithName:@"Weibei TC" size:17.0];
-    NSAttributedString *attributedText =
-    [[NSAttributedString alloc]
-     initWithString:cellText
-     attributes:@
-     {
-     NSFontAttributeName: cellFont
-     }];
-    CGRect rect = [attributedText boundingRectWithSize:CGSizeMake(tableView.bounds.size.width, CGFLOAT_MAX)
-                                               options:NSStringDrawingUsesLineFragmentOrigin
-                                               context:nil];
-    return rect.size.height + 10;
-
-
+{    return 44;
   }
 
 
@@ -336,23 +348,37 @@
     
     
     static NSString *identifier =@"Cell";
-    UITableViewCell *cell=[tableView dequeueReusableCellWithIdentifier:identifier];
-    
-    
-    
+    Cell *cell = (Cell*)[tableView dequeueReusableCellWithIdentifier:identifier];
     if (cell==nil) {
-        cell =[[UITableViewCell alloc]initWithStyle:UITableViewCellStyleValue2 reuseIdentifier:identifier];
+   
         cell.textLabel.lineBreakMode = NSLineBreakByWordWrapping;
         cell.textLabel.numberOfLines = 0;
         cell.textLabel.font = [UIFont fontWithName:@"Helvetica" size:17.0];
     }
+    
+    
+    
+
     if (tableView == self.tableView) {
 
     switch (indexPath.row) {
             
-            
-            
         case 0:
+            
+        {
+           [cell.detailTextLabel setNumberOfLines:2];
+            cell.textLabel.font = [UIFont fontWithName:@"Helvetica" size:15];
+            cell.detailTextLabel.font = [UIFont fontWithName:@"Helvetica-bold" size:15];
+            cell.detailTextLabel.textColor=[UIColor whiteColor];
+            cell.titleLabel.text = @"Desc：";
+            [cell changeArrowWithUp:([self.selectIndex isEqual:indexPath]?YES:NO)];
+
+        }
+            
+            break;
+
+            
+        case 1:
             
         {
             [cell.detailTextLabel setNumberOfLines:7];
@@ -374,7 +400,7 @@
         }
             
             break;
-        case 1:
+        case 2:
             
         {
             [cell.detailTextLabel setNumberOfLines:5];
@@ -395,7 +421,7 @@
             
             break;
             
-        case 2:
+        case 3:
             
         {
             [cell.detailTextLabel setNumberOfLines:5];
@@ -417,7 +443,7 @@
             
             break;
             
-        case 3:
+        case 4:
             
         {
             
@@ -915,4 +941,12 @@
 }
 - (IBAction)showsearch:(id)sender {
     [_detailsearchbar becomeFirstResponder];}
+- (IBAction)moretextview:(id)sender {
+    CGRect frame =  self.description_textview.frame;
+    frame.size.height =  self.description_textview.contentSize.height;
+    self.description_textview.frame = frame;
+    [ self.description_textview sizeToFit];
+    [self.description_textview setScrollEnabled:YES];
+
+}
 @end

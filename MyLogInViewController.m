@@ -69,7 +69,7 @@
     
     // Set frame for elements
     // [self.logInView setFrame:CGRectMake(0.0f, 0.0f, 320.0f, 600.0f)];
-    [self.logInView.passwordForgottenButton setFrame:CGRectMake(23.0f, 330.0f, 300.0f, 110.0f)];
+    [self.logInView.passwordForgottenButton setFrame:CGRectMake(88.f, 100.0f, 150.0f, 30.0f)];
     [self.logInView.dismissButton setFrame:CGRectMake(260.0f, 30.0f, 40.0f, 40.0f)];
     [self.logInView.logo setFrame:CGRectMake(30.0f, 80.0f, 250.0f, 58.5f)];
     [self.logInView.facebookButton setFrame:CGRectMake(0.0f, 330.0f, 320.0f, 40.0f)];
@@ -91,4 +91,3 @@
 }
 
 @end
-
