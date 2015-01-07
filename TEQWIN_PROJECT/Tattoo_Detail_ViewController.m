@@ -234,7 +234,7 @@
     
     PFQuery *query = [PFQuery queryWithClassName:@"Photo"];
     [query whereKey:@"Master_id" equalTo:self.tattoomasterCell.master_id];
-       [query orderByAscending:@"createdAt"];
+     //  [query orderByAscending:@"createdAt"];
      query.cachePolicy = kPFCachePolicyCacheThenNetwork;
     
     [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {

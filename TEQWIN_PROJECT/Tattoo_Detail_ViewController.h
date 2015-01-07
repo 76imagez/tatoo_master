@@ -25,7 +25,7 @@
     NSMutableArray *list;
     NSArray*imageFilesArray_image;
     
-    
+        BOOL cell0_ison;
 }
 
 @property (weak, nonatomic) IBOutlet UILabel *noimage;
