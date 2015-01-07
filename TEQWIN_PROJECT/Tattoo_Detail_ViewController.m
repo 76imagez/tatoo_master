@@ -49,16 +49,7 @@
     [super viewDidLoad];
   //  NSLog(@"ffff%f",self.imagesCollection.frame.size.height);
 
-    if ([UIScreen mainScreen].bounds.size.height ==480) {
-        self.view.frame = CGRectMake(0, 0,320, [UIScreen mainScreen].bounds.size.height);
-    }
-    else
-    {
-        self.view.frame = CGRectMake(0, 0,320, [UIScreen mainScreen].bounds.size.height);
-
-      
-    }
-
+    
        UIBarButtonItem *backButton = [[UIBarButtonItem alloc] initWithTitle:@"" style:UIBarButtonItemStyleBordered target:nil action:nil];
     self.navigationItem.backBarButtonItem = backButton;
     
@@ -304,15 +295,15 @@
      
             rectangle = self.imagesCollection.frame;
             rectangle.size = [self.imagesCollection.collectionViewLayout collectionViewContentSize];
-            rectangle.size.height=1300;
+            
             self.imagesCollection.frame=rectangle;
           
              [ self.imagesCollection sizeToFit];
             
             
             if ([UIScreen mainScreen].bounds.size.height ==480) {
-                [self.scrollView setContentSize:CGSizeMake(320,  +480+self.description_textview.contentSize.height+rectangle.size.height)];
-                 self.view.frame = CGRectMake(0, 0,320, 480+self.description_textview.contentSize.height+rectangle.size.height);
+                [self.scrollView setContentSize:CGSizeMake(320,  +350+self.description_textview.contentSize.height+rectangle.size.height)];
+              
                 NSLog(@"rectangle%f",rectangle.size.height);
                  NSLog(@"frame%f",self.description_textview.contentSize.height);
                 NSLog(@"%f",self.view.frame.size.height+400);
@@ -320,8 +311,10 @@
             }
             else
             {
-                [self.scrollView setContentSize:CGSizeMake(320,  500+ self.description_textview.contentSize.height+rectangle.size.height)];
-                NSLog(@"%f",self.description_textview.contentSize.height);
+                [self.scrollView setContentSize:CGSizeMake(320,  +350+ self.description_textview.contentSize.height+rectangle.size.height)];
+                NSLog(@"rectangle%f",rectangle.size.height);
+                NSLog(@"frame%f",self.description_textview.contentSize.height);
+                NSLog(@"VIEW%f",self.view.frame.size.height+400);
  NSLog(@"%f",frame.size.height);
             }
 
