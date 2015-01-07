@@ -608,17 +608,26 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <tableView opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleAspectFill" fixedFrame="YES" bounces="NO" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" delaysContentTouches="NO" canCancelContentTouches="NO" bouncesZoom="NO" dataMode="prototypes" style="grouped" separatorStyle="none" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" translatesAutoresizingMaskIntoConstraints="NO" id="RFZ-3m-zSA">
-                                        <rect key="frame" x="20" y="144" width="320" height="611"/>
+                                        <rect key="frame" x="20" y="144" width="320" height="800"/>
                                         <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <color key="separatorColor" red="0.78666322969543145" green="0.62993444102205431" blue="0.30476649491762386" alpha="1" colorSpace="calibratedRGB"/>
                                         <color key="sectionIndexBackgroundColor" red="0.0037872779190000001" green="0.0037872779190000001" blue="0.0037872779190000001" alpha="1" colorSpace="calibratedRGB"/>
-                                        <color key="sectionIndexTrackingBackgroundColor" patternImage="B6377F02-D302-46A6-908C-6CE0FFF0AA29" colorSpace="pattern"/>
+                                        <color key="sectionIndexTrackingBackgroundColor" patternImage="3B70D8D0-66DA-4564-BFEE-EAC39C7287EC" colorSpace="pattern"/>
+                                        <textView key="tableHeaderView" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="center" id="O7g-ZI-7jb">
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                            <color key="textColor" red="1" green="0.99710710305548844" blue="0.9679462106398572" alpha="1" colorSpace="calibratedRGB"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                            <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                        </textView>
                                         <collectionView key="tableFooterView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" indicatorStyle="white" minimumZoomScale="0.0" maximumZoomScale="0.0" dataMode="prototypes" id="aZp-a7-g2X">
-                                            <rect key="frame" x="20" y="385" width="320" height="245"/>
+                                            <rect key="frame" x="0.0" y="168.5" width="320" height="78"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="deviceRGB"/>
-                                            <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="1hC-kh-4t8">
-                                                <size key="itemSize" width="83" height="90"/>
+                                            <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="fbE-5i-Rb4">
+                                                <size key="itemSize" width="50" height="50"/>
                                                 <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                                 <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                                 <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
@@ -662,29 +671,6 @@
                                             </connections>
                                         </collectionView>
                                         <prototypes>
-                                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="39" id="qAn-GL-ojM" customClass="Cell">
-                                                <rect key="frame" x="0.0" y="167" width="320" height="65"/>
-                                                <autoresizingMask key="autoresizingMask"/>
-                                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="qAn-GL-ojM" id="nuA-xJ-kOS">
-                                                    <rect key="frame" x="0.0" y="0.0" width="320" height="65"/>
-                                                    <autoresizingMask key="autoresizingMask"/>
-                                                    <subviews>
-                                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="I2Y-9F-pf7">
-                                                            <rect key="frame" x="277" y="9" width="35" height="20"/>
-                                                        </imageView>
-                                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Content" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ilg-VB-XeJ">
-                                                            <rect key="frame" x="19" y="10" width="250" height="21"/>
-                                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
-                                                            <color key="textColor" red="0.0" green="0.23529411764705882" blue="0.31372549019607843" alpha="1" colorSpace="calibratedRGB"/>
-                                                            <nil key="highlightedColor"/>
-                                                        </label>
-                                                    </subviews>
-                                                </tableViewCellContentView>
-                                                <connections>
-                                                    <outlet property="arrowImageView" destination="I2Y-9F-pf7" id="YK3-t1-AxA"/>
-                                                    <outlet property="titleLabel" destination="Ilg-VB-XeJ" id="D19-Kt-2EU"/>
-                                                </connections>
-                                            </tableViewCell>
                                             <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="65" id="Zbv-Eo-ONc">
                                                 <rect key="frame" x="0.0" y="167" width="320" height="65"/>
                                                 <autoresizingMask key="autoresizingMask"/>
@@ -722,6 +708,7 @@
                     <connections>
                         <outlet property="bookmark_image" destination="BkW-5o-UGo" id="rC8-qU-dK3"/>
                         <outlet property="count_like" destination="RDb-eS-fra" id="OWz-us-hqF"/>
+                        <outlet property="description_textview" destination="O7g-ZI-7jb" id="fvd-29-Zdp"/>
                         <outlet property="favButton" destination="62o-N6-bG8" id="trU-ZK-hAd"/>
                         <outlet property="fav_image" destination="Vix-Os-tAF" id="xRJ-Ka-bcX"/>
                         <outlet property="imagesCollection" destination="aZp-a7-g2X" id="CvR-DC-6pk"/>
@@ -1557,7 +1544,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="B6377F02-D302-46A6-908C-6CE0FFF0AA29" width="320" height="460">
+        <image name="3B70D8D0-66DA-4564-BFEE-EAC39C7287EC" width="320" height="460">
             <mutableData key="keyedArchiveRepresentation">
 YnBsaXN0MDDUAQIDBAUGPj9YJHZlcnNpb25YJG9iamVjdHNZJGFyY2hpdmVyVCR0b3ASAAGGoK4HCBMU
 GR4fIyQsLzI4O1UkbnVsbNUJCgsMDQ4PEBESVk5TU2l6ZVYkY2xhc3NcTlNJbWFnZUZsYWdzVk5TUmVw

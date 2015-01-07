@@ -13,7 +13,7 @@
 #import "Tattoo_Master_Info.h"
 #import <MessageUI/MessageUI.h>
 #import "TattooMasterCell.h"
-#import "UIFolderTableView.h"
+
 //#import "GAITrackedViewController.h"
 @interface Tattoo_Detail_ViewController : UIViewController<MFMailComposeViewControllerDelegate,UITableViewDelegate, UITableViewDataSource, UIAlertViewDelegate >
 
@@ -26,7 +26,8 @@
     NSMutableArray *list;
     NSArray*imageFilesArray_image;
     UICollectionViewFlowLayout *flowLayout;
-    
+    NSString*t;
+    CGRect rectangle;
 }
 @property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
 - (IBAction)moretextview:(id)sender;
@@ -62,7 +63,7 @@
 
 @property (nonatomic, assign) BOOL isbookmark;
 @property (nonatomic, assign) BOOL isFav;
-@property (weak, nonatomic) IBOutlet UIFolderTableView *tableView;
+@property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (nonatomic, strong) NSString *venueId;
 
 
