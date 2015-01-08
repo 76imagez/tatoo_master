@@ -36,8 +36,41 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-   
+    UIImage *home_news = [[UIImage imageNamed:@"home_news.png"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+    UIImage *home_newsTap = [[UIImage imageNamed:@"home_news.png"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+    [self.home_news setImage:home_news forState:UIControlStateNormal];
+    [self.home_news setImage:home_newsTap forState:UIControlStateHighlighted];
+    
+    UIImage *home_branches = [[UIImage imageNamed:@"home_branches.png"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+    UIImage *home_branchesTap = [[UIImage imageNamed:@"home_branches.png"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+    [self.home_branchs setImage:home_branches forState:UIControlStateNormal];
+    [self.home_branchs setImage:home_branchesTap forState:UIControlStateHighlighted];
+    
+    UIImage *home_profiles = [[UIImage imageNamed:@"home_profile.png"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+    UIImage *home_profilesTap = [[UIImage imageNamed:@"home_profile.png"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+    [self.home_profile setImage:home_profiles forState:UIControlStateNormal];
+    [self.home_profile setImage:home_profilesTap forState:UIControlStateHighlighted];
+    
+    UIImage *home_history = [[UIImage imageNamed:@"home_history.png"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+    UIImage *home_historyTap = [[UIImage imageNamed:@"home_history.png"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+    [self.home_history setImage:home_history forState:UIControlStateNormal];
+    [self.home_history setImage:home_historyTap forState:UIControlStateHighlighted];
+    
+    UIImage *home_notice = [[UIImage imageNamed:@"home_allert.png"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+    UIImage *home_noticeTap = [[UIImage imageNamed:@"home_allert.png"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+    [self.home_notice setImage:home_notice forState:UIControlStateNormal];
+    [self.home_notice setImage:home_noticeTap forState:UIControlStateHighlighted];
+    self.home_notice.frame =CGRectMake(230, 374, 64, 77);
 
+    UIImage *home_match = [[UIImage imageNamed:@"home_contact.png"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+    UIImage *home_matchTap = [[UIImage imageNamed:@"home_contact.png"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+    [self.home_contact setImage:home_match forState:UIControlStateNormal];
+    [self.home_contact setImage:home_matchTap forState:UIControlStateHighlighted];
+    self.home_contact.frame =CGRectMake(230, 374, 64, 77);
+
+
+    
+    
     if (![[NSUserDefaults standardUserDefaults] boolForKey:@"HasLaunchedOnce"]) {
                 //然后这里设定关联，此处把indexPath关联到alert上
         UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@""
