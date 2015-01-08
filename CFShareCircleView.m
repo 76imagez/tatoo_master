@@ -73,6 +73,7 @@
     }
     if(_sharingOptionsIsVisible)
         _sharingOptionsView.frame = self.bounds;
+        
     [self updateLayers];
 }
 

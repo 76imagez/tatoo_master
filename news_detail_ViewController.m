@@ -32,7 +32,11 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    
+     [self queryParseMethod_2];
+       UIFont *font_name = [UIFont fontWithName:@"Weibei TC" size:20];
+    UIFont *font_count = [UIFont fontWithName:@"Weibei TC" size:15];
+    UIFont *font_detail= [UIFont fontWithName:@"Weibei TC" size:15];
+
     NSDictionary *dimensions = @{ @"name":self.tattoomasterCell.name};
     [PFAnalytics trackEvent:@"show_detai_news" dimensions:dimensions];
     _news_detail.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"background.jpg"]];
@@ -44,9 +48,10 @@
     CGRect frame =   _news_detail.frame;
     frame.size.height =  _news_detail.contentSize.height;
     _news_detail.frame = frame;
+    _news_detail.font=font_detail;
     [  _news_detail sizeToFit];
     [self.news_detail setScrollEnabled:YES];
-
+    _view_count.font=font_count;
     if (self.tattoomasterCell.news_view ==nil) {
         self.view_count.text = @"1";
     }
@@ -54,6 +59,7 @@
         self.view_count.text =[NSString stringWithFormat:@"%lu",(unsigned long)self.tattoomasterCell.news_view.count];
     }
     self.name.text =self.tattoomasterCell.name;
+    self.name.font=font_name;
     _news_detail.text=self.tattoomasterCell.news;
     self.profile_image.file=self.tattoomasterCell.imageFile;
     self.profile_image.layer.cornerRadius =self.profile_image.frame.size.width / 2;
@@ -81,6 +87,40 @@
     
     // self.page.numberOfPages = [imageFilesArray count];
 }
+- (void)queryParseMethod_2 {
+    NSLog(@"start query");
+    
+    PFQuery *query = [PFQuery queryWithClassName:@"Tattoo_Master"];
+    query.cachePolicy = kPFCachePolicyCacheThenNetwork;
+    
+    [query whereKey:@"Master_id" equalTo:self.tattoomasterCell.master_id];
+    [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
+        if ([objects count] == 0) {
+            
+        }
+        if (!error) {
+            NSArray * array;
+            array = [[NSArray alloc] initWithArray:objects];
+            for (PFObject *object in objects) {
+                
+                _profile_image.file =[object objectForKey:@"image"];
+                [_profile_image.file getDataInBackgroundWithBlock:^(NSData *data, NSError *error) {
+                    // self.profileimage.file=self.tattoomasterCell.imageFile;
+                    self.profile_image.layer.cornerRadius =self.profile_image.frame.size.width / 2;
+                    self.profile_image.layer.borderWidth = 0.0f;
+                    self.profile_image.layer.borderColor = [UIColor whiteColor].CGColor;
+                    self.profile_image.clipsToBounds = YES;
+                    
+                    _profile_image.image = UIGraphicsGetImageFromCurrentImageContext();
+                    UIGraphicsEndImageContext();
+                    _profile_image.image = [UIImage imageWithData:data];
+                }];
+            }}
+    }];
+    
+    
+}
+
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];

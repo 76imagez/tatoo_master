@@ -280,8 +280,10 @@
     thumbnailImageView.file = thumbnail;
     [thumbnailImageView loadInBackground];
     
-    
+        UIFont *font = [UIFont fontWithName:@"Weibei TC" size:20];
+
     UILabel *nameLabel = (UILabel*) [cell viewWithTag:101];
+        nameLabel.font=font;
     nameLabel.text = [imageObject objectForKey:@"Name"];
     
     UILabel *news = (UILabel*) [cell viewWithTag:155];
@@ -332,10 +334,10 @@ cell.thumbnail.image=[UIImage imageNamed:@"ICON.PNG"];
      PFImageView *thumbnail = (PFImageView*)[cell viewWithTag:167];
     PFObject *imageObject = [imageFilesArray objectAtIndex:indexPath.row];
       PFFile *avstar = [imageObject objectForKey:@"image"];
-    
+       UIFont *font = [UIFont fontWithName:@"Weibei TC" size:20];
     UILabel *name = (UILabel*) [cell viewWithTag:166];
     name.text = [imageObject objectForKey:@"Name"];
-    
+    name.font=font;
    
     PFFile *imageFile = [imageObject objectForKey:@"promotion"];
     cell.loadingSpinner.hidden = NO;

@@ -133,12 +133,13 @@
         thumbnailImageView.file = thumbnail;
         [thumbnailImageView loadInBackground];
         
-        
+            UIFont *font = [UIFont fontWithName:@"Weibei TC" size:20];
         UILabel *nameLabel = (UILabel*) [cell viewWithTag:101];
         nameLabel.text = [imageObject objectForKey:@"Name"];
-        
+        nameLabel.font=font;
         UILabel *news = (UILabel*) [cell viewWithTag:155];
-        
+         UIFont *font2 = [UIFont fontWithName:@"Weibei TC" size:15];
+        news.font=font2;
         news.text = [imageObject objectForKey:@"news"];
         news.textColor =[UIColor colorWithRed:234.0/255.0
                                         green:192.0/255.0 blue:94/255.0 alpha:1.0];

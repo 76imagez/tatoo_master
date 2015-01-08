@@ -29,10 +29,10 @@ UILabel *backtips;
 @property (retain) UIDocumentInteractionController * documentInteractionController;
 
 @property (weak, nonatomic) IBOutlet UILabel *master_name;
-@property (weak, nonatomic) IBOutlet PFImageView *master_image;
+
 - (IBAction)btn_share:(id)sender;
 - (IBAction)like:(id)sender;
-
+@property (weak, nonatomic) IBOutlet PFImageView *profileimage;
 @property(nonatomic,retain) UIDocumentInteractionController *documentationInteractionController;
 @property (strong, nonatomic) TattooMasterCell * tattoomasterCell;
 @end

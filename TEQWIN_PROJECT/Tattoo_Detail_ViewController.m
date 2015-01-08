@@ -780,25 +780,28 @@
 
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
     if ([segue.identifier isEqualToString:@"GOGALLERY"]) {
-        
+        NSLog(@"11");
         
         if ([segue.destinationViewController isKindOfClass:[Gallery class]]){
             NSIndexPath * indexPath = [self.tableView indexPathForCell:sender];
             Gallery *receiver = (Gallery*)segue.destinationViewController;
             receiver.tattoomasterCell=_tattoomasterCell;
             [self.tableView deselectRowAtIndexPath:indexPath animated:NO];
+           
         }
     }
     if ([segue.identifier isEqualToString:@"GOGALLERY_collection"]) {
-        
+          NSLog(@"22");
         
         if ([segue.destinationViewController isKindOfClass:[Gallery class]]){
             self.tattoomasterCell.clickindexpath = [self.imagesCollection indexPathForCell:sender];
             Gallery *receiver = (Gallery*)segue.destinationViewController;
             NSLog(@"ha%ld",(long)self.tattoomasterCell.clickindexpath.row);
             receiver.tattoomasterCell=_tattoomasterCell;
-            
+            receiver.tattoomasterCell.imageFile =_tattoomasterCell.imageFile;
             [self.tableView deselectRowAtIndexPath:self.tattoomasterCell.clickindexpath animated:NO];
+            
+
         }
     }
     

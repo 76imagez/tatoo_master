@@ -242,6 +242,7 @@ UIFont *yourCustomFont = [UIFont fontWithName:@"叶根友千秋字体" size:18];
 - (void)queryParseMethod {
     MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
     hud.mode = MBProgressHUDModeIndeterminate;
+    
     hud.labelText = @"Loading";
     [hud show:YES];
  
@@ -356,10 +357,10 @@ UIFont *yourCustomFont = [UIFont fontWithName:@"叶根友千秋字体" size:18];
             
             sex_statues.image = [UIImage imageNamed:@"female.png"];
         }
-
+   UIFont *font = [UIFont fontWithName:@"Weibei TC" size:15];
     UILabel *nameLabel = (UILabel*) [cell viewWithTag:101];
     nameLabel.text = [imageObject objectForKey:@"Name"];
-    
+    nameLabel.font=font;
     UILabel *prepTimeLabel = (UILabel*) [cell viewWithTag:102];
     prepTimeLabel.text = [imageObject objectForKey:@"Gender"];
     

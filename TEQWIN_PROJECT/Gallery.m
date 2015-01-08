@@ -47,18 +47,15 @@ CFShareCircleView *shareCircleView;
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    imgStartWidth=fullImageView.frame.size.width;
+      imgStartWidth=fullImageView.frame.size.width;
 	imgStartHeight=fullImageView.frame.size.height;
     NSDictionary *dimensions = @{ @"name":self.tattoomasterCell.name};
     [PFAnalytics trackEvent:@"showgallery" dimensions:dimensions];
-    NSLog(@"%@",self.tattoomasterCell);
-    [self queryParseMethod];
-    self.master_image.file=self.tattoomasterCell.imageFile;
+
     
-    self.master_image.layer.cornerRadius =self.master_image.frame.size.width / 2;
-    self.master_image.layer.borderWidth = 1.0f;
-    self.master_image.layer.borderColor = [UIColor whiteColor].CGColor;
-    self.master_image.clipsToBounds = YES;
+   
+    [self queryParseMethod];
+ [self queryParseMethod_2];
    
 
     self.master_name.text=self.tattoomasterCell.name    ;
@@ -85,8 +82,9 @@ CFShareCircleView *shareCircleView;
 {
     
     [super viewDidAppear:animated];
-    
-    // Set the gesture
+   
+    NSLog(@"pkpk%@",self.profileimage.file);
+         // Set the gesture
     [self.view addGestureRecognizer:self.revealViewController.panGestureRecognizer];
 
     if (self.tattoomasterCell.clickindexpath!=nil) {
@@ -109,6 +107,40 @@ CFShareCircleView *shareCircleView;
 {
     return UIStatusBarStyleLightContent;
 }
+- (void)queryParseMethod_2 {
+    NSLog(@"start query");
+    
+    PFQuery *query = [PFQuery queryWithClassName:@"Tattoo_Master"];
+    query.cachePolicy = kPFCachePolicyCacheThenNetwork;
+    
+    [query whereKey:@"Master_id" equalTo:self.tattoomasterCell.master_id];
+    [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
+        if ([objects count] == 0) {
+            
+        }
+        if (!error) {
+            NSArray * array;
+            array = [[NSArray alloc] initWithArray:objects];
+            for (PFObject *object in objects) {
+                
+                _profileimage.file =[object objectForKey:@"image"];
+                [_profileimage.file getDataInBackgroundWithBlock:^(NSData *data, NSError *error) {
+                   // self.profileimage.file=self.tattoomasterCell.imageFile;
+                    self.profileimage.layer.cornerRadius =self.profileimage.frame.size.width / 2;
+                    self.profileimage.layer.borderWidth = 0.0f;
+                    self.profileimage.layer.borderColor = [UIColor whiteColor].CGColor;
+                    self.profileimage.clipsToBounds = YES;
+
+                    _profileimage.image = UIGraphicsGetImageFromCurrentImageContext();
+                    UIGraphicsEndImageContext();
+                    _profileimage.image = [UIImage imageWithData:data];
+                }];
+            }}
+    }];
+    
+    
+}
+
 - (void)queryParseMethod {
     NSLog(@"start query");
     MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
@@ -206,6 +238,8 @@ NSLog(@"%@", imageFilesArray);
     [ cell.image addGestureRecognizer:[[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(actionTap:)]];
     
     image_desc = (UILabel*) [cell viewWithTag:199];
+      UIFont *cellFont = [UIFont fontWithName:@"Weibei TC" size:12.0];
+    image_desc.font=cellFont;
     if ([imageObject objectForKey:@"image_desc"] ==nil ||[[imageObject objectForKey:@"image_desc"]  isEqual:@""] ) {
         image_desc.text = @"　　";
     }
@@ -253,7 +287,9 @@ NSLog(@"%@", imageFilesArray);
    // [test setBackgroundColor:[UIColor clearColor]];
     test.backgroundColor = [[UIColor blackColor] colorWithAlphaComponent:0.5f];;
     test.textColor=[UIColor whiteColor];
+      UIFont *cellFont = [UIFont fontWithName:@"Weibei TC" size:14.0];
     test.text= [descobject objectForKey:@"image_desc"];
+    test.font=cellFont;
     CGRect frame =  test.frame;
     frame.size.height =  test.contentSize.height;
     test.frame = frame;

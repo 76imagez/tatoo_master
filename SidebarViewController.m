@@ -149,7 +149,8 @@
     
 
          self.tableview.backgroundColor = [UIColor clearColor];
-self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"background.jpg"]];
+//self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"background.jpg"]];
+    self.view.backgroundColor=[UIColor blackColor];
     menuItems = @[@"主頁", @"新消息",@"紋身歷史" ,@"紋身注意事項",@"找紋身師傅",@"關於我們"];
     list =[[NSMutableArray alloc]init];
     
