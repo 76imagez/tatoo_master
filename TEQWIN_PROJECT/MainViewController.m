@@ -37,15 +37,7 @@
 {
     [super viewDidLoad];
    
-    if ([UIScreen mainScreen].bounds.size.height ==480) {
-       
-        NSLog(@"%f",[UIScreen mainScreen].bounds.size.height    );
-    }
-    else if ([UIScreen mainScreen].bounds.size.height ==568) {
-         NSLog(@"%f",[UIScreen mainScreen].bounds.size.height    );
-    }
-
-    if (![[NSUserDefaults standardUserDefaults] boolForKey:@"HasLaunchedOnce"]) {
+       if (![[NSUserDefaults standardUserDefaults] boolForKey:@"HasLaunchedOnce"]) {
                 //然后这里设定关联，此处把indexPath关联到alert上
         UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@""
                                                         message:@"需要登入嗎？"
@@ -72,7 +64,7 @@
     flowLayout.scrollDirection = UICollectionViewScrollDirectionHorizontal;
     [self.image_collection setCollectionViewLayout:flowLayout];
     
-    flowLayout.itemSize = CGSizeMake(320, 163);
+    flowLayout.itemSize = CGSizeMake(320, 180);
     
     [flowLayout setMinimumLineSpacing:0.0f];
     // self.screenName = @"Main";
