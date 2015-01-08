@@ -22,7 +22,7 @@
     HomeModel *_homeModel;
     NSArray *_feedItems;
     Tattoo_Master_Info *_selected_tattoo_master;
-   
+   CGRect frame;
 }
 @property (nonatomic, strong) UISearchDisplayController *searchController;
 @property (nonatomic, strong) NSMutableArray *searchResults;
@@ -37,6 +37,13 @@
 {
     [super viewDidLoad];
    
+    if ([UIScreen mainScreen].bounds.size.height ==480) {
+       
+        NSLog(@"%f",[UIScreen mainScreen].bounds.size.height    );
+    }
+    else if ([UIScreen mainScreen].bounds.size.height ==568) {
+         NSLog(@"%f",[UIScreen mainScreen].bounds.size.height    );
+    }
 
     if (![[NSUserDefaults standardUserDefaults] boolForKey:@"HasLaunchedOnce"]) {
                 //然后这里设定关联，此处把indexPath关联到alert上

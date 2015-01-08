@@ -36,5 +36,6 @@
 @property (weak, nonatomic) IBOutlet UICollectionView *image_collection;
 @property (weak, nonatomic) IBOutlet UITableView *main_tableview;
 
+@property (weak, nonatomic) IBOutlet UIImageView *home_news;
 
 @end
