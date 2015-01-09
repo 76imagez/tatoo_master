@@ -21,7 +21,8 @@
     [super viewDidLoad];
     
     [self.signUpView setBackgroundColor:[UIColor colorWithPatternImage:[UIImage imageNamed:@"tattoo_login_2.png"]]];
-    [self.signUpView setLogo:[[UIImageView alloc] initWithImage:[UIImage imageNamed:@""]]];
+    [self.signUpView setLogo:[[UIImageView alloc] initWithImage:[UIImage imageNamed:@"tattoo_menu_logo.png"]]];
+
     
     // Change button apperance
     [self.signUpView.dismissButton setImage:[UIImage imageNamed:@"dismiss_on.png"] forState:UIControlStateNormal];
@@ -55,20 +56,24 @@
     
     [self.signUpView.emailField setValue:[UIColor colorWithRed:200.0/255.0 green:200.0/255.0 blue:200.0/255.0 alpha:1.0] forKeyPath:@"_placeholderLabel.textColor"];
     
-    
+    [self.signUpView.usernameField setTextColor:[UIColor colorWithRed:255.0f/255.0f green:255.0f/255.0f blue:255.0f/255.0f alpha:1.0]];
+    [self.signUpView.passwordField setTextColor:[UIColor colorWithRed:255.0f/255.0f green:255.0f/255.0f blue:255.0f/255.0f alpha:1.0]];
+    [self.signUpView.emailField setTextColor:[UIColor colorWithRed:255.0f/255.0f green:255.0f/255.0f blue:255.0f/255.0f alpha:1.0]];
+
+
 }
 
 - (void)viewDidLayoutSubviews {
     [super viewDidLayoutSubviews];
-    
+     [self.signUpView.logo setFrame:CGRectMake(75.0f, 70.0f,178.0f, 41.5f)];
     
     [self.signUpView.dismissButton setFrame:CGRectMake(260.0f, 30.0f, 40.0f, 40.0f)];
-    [self.signUpView.logo setFrame:CGRectMake(150.0f, 30.0f,100.0f, 30.0f)];
+    //[self.signUpView.logo setFrame:CGRectMake(150.0f, 30.0f,100.0f, 30.0f)];
     [self.signUpView.signUpButton setFrame:CGRectMake(0.0f,300.0f, 320.0f, 40.0f)];
     //  [self.fieldsBackground setFrame:CGRectMake(35.0f, 145.0f, 250.0f, 174.0f)];
-    [self.signUpView.usernameField setFrame:CGRectMake(35.0f, 145.0f, 250.0f, 50.0f)];
-    [self.signUpView.passwordField setFrame:CGRectMake(35.0f, 195.0f, 250.0f, 50.0f)];
-    [self.signUpView.emailField setFrame:CGRectMake(35.0f, 245.0f, 250.0f, 50.0f)];
+    [self.signUpView.usernameField setFrame:CGRectMake(0.0f, 145.0f, 320.0f, 50.0f)];
+    [self.signUpView.passwordField setFrame:CGRectMake(0.0f, 195.0f, 320.0f, 50.0f)];
+    [self.signUpView.emailField setFrame:CGRectMake(0.0f, 245.0f, 320.0f, 50.0f)];
     
 }
 

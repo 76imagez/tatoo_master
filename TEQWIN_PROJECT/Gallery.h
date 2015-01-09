@@ -23,6 +23,8 @@ UILabel *backtips;
 	 UIPinchGestureRecognizer *twoFingerPinch;
 	CGFloat imgStartWidth;
 	CGFloat imgStartHeight;
+    UIButton *button;
+    BOOL isshow;
 }
 
 @property (weak, nonatomic) IBOutlet UITableView *tableView;

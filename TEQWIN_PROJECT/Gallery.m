@@ -273,7 +273,7 @@ NSLog(@"%@", imageFilesArray);
 //按圖第一下放大至fullscreen
 -(void)actionTap:(UITapGestureRecognizer *)sender{
     NSLog(@"按一下返回");
-   
+    isshow=YES;
        CGPoint location = [sender locationInView:self.tableView];
     NSIndexPath *indexPath  = [self.tableView indexPathForRowAtPoint:location];
     
@@ -295,7 +295,7 @@ NSLog(@"%@", imageFilesArray);
     test.frame = frame;
     test.editable=NO;
     [ test sizeToFit];
-
+    NSLog(@"%f",test.frame.origin.y );
     
     frame_first=CGRectMake(cell.frame.origin.x+imageView.frame.origin.x,self.view.frame.size.height, imageView.frame.size.width, imageView.frame.size.height);
     
@@ -304,6 +304,17 @@ NSLog(@"%@", imageFilesArray);
     fullImageView.userInteractionEnabled=YES;
     [fullImageView addGestureRecognizer:[[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(actionTap2:)]];
      [fullImageView addGestureRecognizer:[[UIPinchGestureRecognizer  alloc] initWithTarget:self action:@selector(pinch:)]];
+    
+      UIFont *buttonfont = [UIFont fontWithName:@"Weibei TC" size:14.0];
+    [button.titleLabel setFont:buttonfont];
+    button = [UIButton buttonWithType:UIButtonTypeRoundedRect]; //3
+       [button setTitle:@"Close" forState:UIControlStateNormal];
+    [button setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+      [button setTitleColor:[UIColor whiteColor] forState:UIControlStateHighlighted];
+    [button addTarget:self action:@selector(buttonclose:) forControlEvents:UIControlEventTouchUpInside];//2
+   //1
+    
+    
     fullImageView.contentMode=UIViewContentModeScaleAspectFit;
     
     if (![fullImageView superview]) {
@@ -312,14 +323,15 @@ NSLog(@"%@", imageFilesArray);
         
         [self.view.window addSubview:fullImageView];
          [self.view.window addSubview:test];
-       
+        [self.view.window addSubview:button];
         
         test.frame=frame_first;
         fullImageView.frame=frame_first;
         [UIView animateWithDuration:0.5 animations:^{
             
             fullImageView.frame=CGRectMake(0, 0, 320, [UIScreen mainScreen].bounds.size.height);
-         
+           
+button.frame=CGRectMake(250, 30, 50,50);
             test.frame=CGRectMake(0, self.view.frame.size.height-44, 320,test.contentSize.height);
          ;
             twoFingerPinch = [[UIPinchGestureRecognizer alloc]
@@ -346,11 +358,36 @@ NSLog(@"%@", imageFilesArray);
 }
 ////按圖第二下縮回原型
 -(void)actionTap2:(UITapGestureRecognizer *)sender{
+           if (isshow==YES) {
+               [UIView animateWithDuration:0.5 animations:^{
+                   
+                   test.frame=frame_first;
+                   
+                   [test removeFromSuperview];
+               } completion:^(BOOL finished) {
+                   
+                   [test removeFromSuperview];
+               }];    [UIApplication sharedApplication].statusBarHidden=NO;
+               
+               isshow=NO;
+
+        }
+    else
+    {
+                 test.frame= CGRectMake(0,  self.view.frame.size.height-44, 320,400);
+        test.backgroundColor = [[UIColor blackColor] colorWithAlphaComponent:0.5f];;
+                [self.view.window addSubview:test];
+
+        isshow=YES;
+    }
+}
+-(void)buttonclose:(UITapGestureRecognizer *)sender{
     
     [UIView animateWithDuration:0.5 animations:^{
         
         fullImageView.frame=frame_first;
         test.frame=frame_first;
+         button.hidden=YES;
     } completion:^(BOOL finished) {
                 [fullImageView removeFromSuperview];
         [test removeFromSuperview];

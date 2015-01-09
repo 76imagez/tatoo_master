@@ -21,7 +21,7 @@
     [super viewDidLoad];
     
     [self.logInView setBackgroundColor:[UIColor colorWithPatternImage:[UIImage imageNamed:@"tattoo_login_2.png"]]];
-    [self.logInView setLogo:[[UIImageView alloc] initWithImage:[UIImage imageNamed:@""]]];
+    [self.logInView setLogo:[[UIImageView alloc] initWithImage:[UIImage imageNamed:@"tattoo_menu_logo.png"]]];
     
     // Set buttons appearance
     //[self.logInView.dismissButton setImage:[UIImage imageNamed:@"Exit.png"] forState:UIControlStateNormal];
@@ -50,34 +50,37 @@
     //[self.logInView.signUpButton setTitle:@"" forState:UIControlStateHighlighted];
     
     // Set field text color
-    [self.logInView.signUpLabel removeFromSuperview];
-    [self.logInView.externalLogInLabel removeFromSuperview];
-    [self.logInView.usernameField setPlaceholder:@"Enter Username"];
+        [self.logInView.usernameField setPlaceholder:@"Enter Username"];
     [self.logInView.passwordField setPlaceholder:@"Enter Password"];
     
     
-    [self.logInView.usernameField setTextColor:[UIColor colorWithRed:255.0f/255.0f green:255.0f/255.0f blue:255.0f/255.0f alpha:1.0]];
-    
+    [self.logInView.usernameField setTextColor:[UIColor colorWithRed:0.0f/255.0f green:0.0f/255.0f blue:0.0f/255.0f alpha:1.0]];
+      [self.logInView.passwordField setTextColor:[UIColor colorWithRed:0.0f/255.0f green:0.0f/255.0f blue:0.0f/255.0f alpha:1.0]];
     
     [self.logInView.usernameField setBackgroundColor:[[UIColor blackColor] colorWithAlphaComponent:0.5f]];
     [self.logInView.passwordField setBackgroundColor:[[UIColor blackColor] colorWithAlphaComponent:0.5f]];
     [self.logInView.passwordField setValue:[UIColor colorWithRed:200.0/255.0 green:200.0/255.0 blue:200.0/255.0 alpha:1.0] forKeyPath:@"_placeholderLabel.textColor"];
     [self.logInView.usernameField setValue:[UIColor colorWithRed:200.0/255.0 green:200.0/255.0 blue:200.0/255.0 alpha:1.0] forKeyPath:@"_placeholderLabel.textColor"];
+    
+    [self.logInView.usernameField setTextColor:[UIColor colorWithRed:255.0f/255.0f green:255.0f/255.0f blue:255.0f/255.0f alpha:1.0]];
+    [self.logInView.passwordField setTextColor:[UIColor colorWithRed:255.0f/255.0f green:255.0f/255.0f blue:255.0f/255.0f alpha:1.0]];
+    
+
 }
-- (void)viewDidLayoutSubviews {
+- (void)viewDidLayoutSubviews { 
     [super viewDidLayoutSubviews];
     
     // Set frame for elements
     // [self.logInView setFrame:CGRectMake(0.0f, 0.0f, 320.0f, 600.0f)];
-    [self.logInView.passwordForgottenButton setFrame:CGRectMake(88.f, 100.0f, 150.0f, 30.0f)];
+    [self.logInView.passwordForgottenButton setFrame:CGRectMake(88.f, 250.0f, 150.0f, 30.0f)];
     [self.logInView.dismissButton setFrame:CGRectMake(260.0f, 30.0f, 40.0f, 40.0f)];
-    [self.logInView.logo setFrame:CGRectMake(30.0f, 80.0f, 250.0f, 58.5f)];
-    [self.logInView.facebookButton setFrame:CGRectMake(0.0f, 330.0f, 320.0f, 40.0f)];
+    [self.logInView.logo setFrame:CGRectMake(75.0f, 70.0f,178.0f, 41.5f)];
+    [self.logInView.facebookButton setFrame:CGRectMake(0.0f, 370.0f, 320.0f, 40.0f)];
     [self.logInView.twitterButton setFrame:CGRectMake(35.0f+150.0f, 310.0f, 120.0f, 40.0f)];
-    [self.logInView.logInButton setFrame:CGRectMake(0.0f, 250.0f, 320.0f, 40.0f)];
-    [self.logInView.signUpButton setFrame:CGRectMake(0.0f, 290, 320.0f, 40.0f)];
-    [self.logInView.usernameField setFrame:CGRectMake(35.0f, 145.0f, 250.0f, 50.0f)];
-    [self.logInView.passwordField setFrame:CGRectMake(35.0f, 195.0f, 250.0f, 50.0f)];
+    [self.logInView.logInButton setFrame:CGRectMake(0.0f, 290.0f, 320.0f, 40.0f)];
+    [self.logInView.signUpButton setFrame:CGRectMake(0.0f, 330, 320.0f, 40.0f)];
+    [self.logInView.usernameField setFrame:CGRectMake(0.0f, 145.0f, 320.0f, 50.0f)];
+    [self.logInView.passwordField setFrame:CGRectMake(0.0f, 195.0f, 320.0f, 50.0f)];
     [self.fieldsBackground setFrame:CGRectMake(0.0f, 0.0f, 250.0f, 100.0f)];
 }
 

@@ -36,6 +36,15 @@
 @property (weak, nonatomic) IBOutlet UICollectionView *image_collection;
 @property (weak, nonatomic) IBOutlet UITableView *main_tableview;
 
-@property (weak, nonatomic) IBOutlet UIImageView *home_news;
+@property (weak, nonatomic) IBOutlet UIButton *home_news;
+@property (weak, nonatomic) IBOutlet UIButton *home_branchs;
+@property (weak, nonatomic) IBOutlet UIButton *home_profile;
+@property (weak, nonatomic) IBOutlet UIButton *home_history;
+@property (weak, nonatomic) IBOutlet UIButton *home_notice;
+@property (weak, nonatomic) IBOutlet UIButton *home_contact;
+
+
+
+
 
 @end
