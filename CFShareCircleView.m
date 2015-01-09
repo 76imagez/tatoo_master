@@ -63,7 +63,9 @@
 
 - (void)layoutSubviews {
     // Adjust geometry when updating the subviews.
-    _overlayLayer.frame = self.bounds;
+
+   
+    _overlayLayer.frame = CGRectMake(0, 0, 320, 568 );
     _origin = CGPointMake(CGRectGetMidX(self.bounds), CGRectGetMidY(self.bounds));
     _currentPosition = _origin;
     if(_circleIsVisible) {
@@ -73,7 +75,8 @@
     }
     if(_sharingOptionsIsVisible)
         _sharingOptionsView.frame = self.bounds;
-        
+
+
     [self updateLayers];
 }
 

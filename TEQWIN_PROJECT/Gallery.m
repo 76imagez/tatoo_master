@@ -330,10 +330,16 @@ NSLog(@"%@", imageFilesArray);
         [UIView animateWithDuration:0.5 animations:^{
             
             fullImageView.frame=CGRectMake(0, 0, 320, [UIScreen mainScreen].bounds.size.height);
-           
+        
+            UIImage *home_news = [[UIImage imageNamed:@"dismiss_on.png"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+            UIImage *home_newsTap = [[UIImage imageNamed:@"dismiss_off.png"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+            [button setImage:home_news forState:UIControlStateNormal];
+            [button setImage:home_newsTap forState:UIControlStateHighlighted];
+
 button.frame=CGRectMake(250, 30, 50,50);
             test.frame=CGRectMake(0, self.view.frame.size.height-44, 320,test.contentSize.height);
          ;
+           
             twoFingerPinch = [[UIPinchGestureRecognizer alloc]
                               initWithTarget:self
                               action:@selector(twoFingerPinch:)];
