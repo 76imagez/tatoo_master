@@ -142,6 +142,12 @@
 		42854BD61A43E08700FA66B7 /* signupbutton_down.png in Resources */ = {isa = PBXBuildFile; fileRef = 42854BD51A43E08700FA66B7 /* signupbutton_down.png */; };
 		42854BD81A43E0CC00FA66B7 /* signupbutton_up.png in Resources */ = {isa = PBXBuildFile; fileRef = 42854BD71A43E0CC00FA66B7 /* signupbutton_up.png */; };
 		42854BDA1A43E1B600FA66B7 /* login.png in Resources */ = {isa = PBXBuildFile; fileRef = 42854BD91A43E1B600FA66B7 /* login.png */; };
+		428D2CC91A5FB2A00021D039 /* JTSImageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 428D2CBE1A5FB2A00021D039 /* JTSImageViewController.m */; };
+		428D2CCA1A5FB2A00021D039 /* JTSImageInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 428D2CC01A5FB2A00021D039 /* JTSImageInfo.m */; };
+		428D2CCB1A5FB2A00021D039 /* JTSSimpleImageDownloader.m in Sources */ = {isa = PBXBuildFile; fileRef = 428D2CC21A5FB2A00021D039 /* JTSSimpleImageDownloader.m */; };
+		428D2CCC1A5FB2A00021D039 /* JTSAnimatedGIFUtility.m in Sources */ = {isa = PBXBuildFile; fileRef = 428D2CC41A5FB2A00021D039 /* JTSAnimatedGIFUtility.m */; };
+		428D2CCD1A5FB2A00021D039 /* UIImage+JTSImageEffects.m in Sources */ = {isa = PBXBuildFile; fileRef = 428D2CC61A5FB2A00021D039 /* UIImage+JTSImageEffects.m */; };
+		428D2CCE1A5FB2A00021D039 /* UIApplication+JTSImageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 428D2CC81A5FB2A00021D039 /* UIApplication+JTSImageViewController.m */; };
 		428E7C531A00865000CA2C14 /* ICON@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 428E7C511A00865000CA2C14 /* ICON@2x.png */; };
 		428E7C581A0087A900CA2C14 /* background@2x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 428E7C571A0087A900CA2C14 /* background@2x.jpg */; };
 		428E7C5A1A0087B800CA2C14 /* goldebackground@2x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 428E7C591A0087B800CA2C14 /* goldebackground@2x.jpg */; };
@@ -403,6 +409,18 @@
 		42854BD51A43E08700FA66B7 /* signupbutton_down.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = signupbutton_down.png; sourceTree = "<group>"; };
 		42854BD71A43E0CC00FA66B7 /* signupbutton_up.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = signupbutton_up.png; sourceTree = "<group>"; };
 		42854BD91A43E1B600FA66B7 /* login.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = login.png; sourceTree = "<group>"; };
+		428D2CBD1A5FB2A00021D039 /* JTSImageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JTSImageViewController.h; sourceTree = "<group>"; };
+		428D2CBE1A5FB2A00021D039 /* JTSImageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JTSImageViewController.m; sourceTree = "<group>"; };
+		428D2CBF1A5FB2A00021D039 /* JTSImageInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JTSImageInfo.h; sourceTree = "<group>"; };
+		428D2CC01A5FB2A00021D039 /* JTSImageInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JTSImageInfo.m; sourceTree = "<group>"; };
+		428D2CC11A5FB2A00021D039 /* JTSSimpleImageDownloader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JTSSimpleImageDownloader.h; sourceTree = "<group>"; };
+		428D2CC21A5FB2A00021D039 /* JTSSimpleImageDownloader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JTSSimpleImageDownloader.m; sourceTree = "<group>"; };
+		428D2CC31A5FB2A00021D039 /* JTSAnimatedGIFUtility.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JTSAnimatedGIFUtility.h; sourceTree = "<group>"; };
+		428D2CC41A5FB2A00021D039 /* JTSAnimatedGIFUtility.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JTSAnimatedGIFUtility.m; sourceTree = "<group>"; };
+		428D2CC51A5FB2A00021D039 /* UIImage+JTSImageEffects.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+JTSImageEffects.h"; sourceTree = "<group>"; };
+		428D2CC61A5FB2A00021D039 /* UIImage+JTSImageEffects.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+JTSImageEffects.m"; sourceTree = "<group>"; };
+		428D2CC71A5FB2A00021D039 /* UIApplication+JTSImageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIApplication+JTSImageViewController.h"; sourceTree = "<group>"; };
+		428D2CC81A5FB2A00021D039 /* UIApplication+JTSImageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIApplication+JTSImageViewController.m"; sourceTree = "<group>"; };
 		428E7C511A00865000CA2C14 /* ICON@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ICON@2x.png"; sourceTree = "<group>"; };
 		428E7C551A0086A900CA2C14 /* ICON.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ICON.png; sourceTree = "<group>"; };
 		428E7C571A0087A900CA2C14 /* background@2x.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "background@2x.jpg"; sourceTree = "<group>"; };
@@ -551,6 +569,7 @@
 		42193F841985FE08007E3C52 = {
 			isa = PBXGroup;
 			children = (
+				428D2CBC1A5FB2870021D039 /* imageview_sources */,
 				426587291A1C3397002C0E93 /* Resources */,
 				42193FC81985FE42007E3C52 /* SWRevealViewController.m */,
 				42193FC71985FE42007E3C52 /* SWRevealViewController.h */,
@@ -867,6 +886,25 @@
 				427D3B2E19A32B9E00814463 /* LoginUIViewController.m */,
 			);
 			name = "Login System";
+			sourceTree = "<group>";
+		};
+		428D2CBC1A5FB2870021D039 /* imageview_sources */ = {
+			isa = PBXGroup;
+			children = (
+				428D2CBD1A5FB2A00021D039 /* JTSImageViewController.h */,
+				428D2CBE1A5FB2A00021D039 /* JTSImageViewController.m */,
+				428D2CBF1A5FB2A00021D039 /* JTSImageInfo.h */,
+				428D2CC01A5FB2A00021D039 /* JTSImageInfo.m */,
+				428D2CC11A5FB2A00021D039 /* JTSSimpleImageDownloader.h */,
+				428D2CC21A5FB2A00021D039 /* JTSSimpleImageDownloader.m */,
+				428D2CC31A5FB2A00021D039 /* JTSAnimatedGIFUtility.h */,
+				428D2CC41A5FB2A00021D039 /* JTSAnimatedGIFUtility.m */,
+				428D2CC51A5FB2A00021D039 /* UIImage+JTSImageEffects.h */,
+				428D2CC61A5FB2A00021D039 /* UIImage+JTSImageEffects.m */,
+				428D2CC71A5FB2A00021D039 /* UIApplication+JTSImageViewController.h */,
+				428D2CC81A5FB2A00021D039 /* UIApplication+JTSImageViewController.m */,
+			);
+			name = imageview_sources;
 			sourceTree = "<group>";
 		};
 		42A4917919E236E700E4D65E /* history */ = {
@@ -1254,11 +1292,14 @@
 				426ED3F819C2C3D00024E817 /* VPImageCropperViewController.m in Sources */,
 				426ED39319B9AF560024E817 /* TattooMasterCell.m in Sources */,
 				42193FCE1985FECF007E3C52 /* MainViewController.m in Sources */,
+				428D2CC91A5FB2A00021D039 /* JTSImageViewController.m in Sources */,
 				427D3B2F19A32B9E00814463 /* LoginUIViewController.m in Sources */,
 				42193FA11985FE08007E3C52 /* AppDelegate.m in Sources */,
 				42A4917D19E2370300E4D65E /* historyViewController.m in Sources */,
+				428D2CCD1A5FB2A00021D039 /* UIImage+JTSImageEffects.m in Sources */,
 				426864671A1450BB0043582C /* news_ViewController.m in Sources */,
 				42193FD619860291007E3C52 /* TattooMaster_ViewController.m in Sources */,
+				428D2CCB1A5FB2A00021D039 /* JTSSimpleImageDownloader.m in Sources */,
 				426ED3E919C04A030024E817 /* MBProgressHUD.m in Sources */,
 				42630059199071F3007B8C8F /* Map_ViewController.m in Sources */,
 				420E2F6F19FDFB8900667E6C /* aboutusViewController.m in Sources */,
@@ -1267,8 +1308,11 @@
 				426ED39B19BD88990024E817 /* Tattoo_Detail_ViewController.m in Sources */,
 				42193FCA1985FE42007E3C52 /* SWRevealViewController.m in Sources */,
 				427D34B5199E077F00814463 /* CFShareCircleView.m in Sources */,
+				428D2CCC1A5FB2A00021D039 /* JTSAnimatedGIFUtility.m in Sources */,
 				42EA3D6619C827600051057C /* Gallery.m in Sources */,
 				42EA3D6319C8273F0051057C /* GalleryCell.m in Sources */,
+				428D2CCA1A5FB2A00021D039 /* JTSImageInfo.m in Sources */,
+				428D2CCE1A5FB2A00021D039 /* UIApplication+JTSImageViewController.m in Sources */,
 				421940921987380F007E3C52 /* Master_Map_ViewController.m in Sources */,
 				4265874B1A1C89D0002C0E93 /* LKLineActivity.m in Sources */,
 				42193F9D1985FE08007E3C52 /* main.m in Sources */,

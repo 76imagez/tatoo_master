@@ -18,6 +18,8 @@
 #import <Parse/Parse.h>
 #import <ParseUI/ParseUI.h>
 #import  <ParseFacebookUtils/PFFacebookUtils.h>
+#import "JTSImageViewController.h"
+#import "JTSImageInfo.h"
 typedef NS_ENUM(NSInteger, LKLineActivityImageSharingType) {
     LKLineActivityImageSharingDirectType,
     LKLineActivityImageSharingActivityType
@@ -235,7 +237,7 @@ NSLog(@"%@", imageFilesArray);
     }];
      cell.image.tag=9999;
     cell.image.userInteractionEnabled=YES;
-    [ cell.image addGestureRecognizer:[[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(actionTap:)]];
+    [ cell.image addGestureRecognizer:[[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(bigButtonTapped:)]];
     
     image_desc = (UILabel*) [cell viewWithTag:199];
       UIFont *cellFont = [UIFont fontWithName:@"Weibei TC" size:12.0];
@@ -354,14 +356,35 @@ button.frame=CGRectMake(250, 30, 50,50);
     
 }
 
-- (void)twoFingerPinch:(UIPinchGestureRecognizer *)recognizer
-{
-    //    NSLog(@"Pinch scale: %f", recognizer.scale);
-    if (recognizer.scale >1.0f && recognizer.scale < 2.5f) {
-        CGAffineTransform transform = CGAffineTransformMakeScale(recognizer.scale, recognizer.scale);
-        fullImageView.transform = transform;
-    }
+- (void)bigButtonTapped:(id)sender {
+    CGPoint location = [sender locationInView:self.tableView];
+    NSIndexPath *indexPath  = [self.tableView indexPathForRowAtPoint:location];
+    
+    UITableViewCell *cell = (UITableViewCell *)[self.tableView  cellForRowAtIndexPath:indexPath];
+    UIImageView *imageView=(UIImageView *)[cell.contentView viewWithTag:9999];
+    // Create image info
+       fullImageView.image=imageView.image;
+    
+    
+    JTSImageInfo *imageInfo = [[JTSImageInfo alloc] init];
+    imageInfo.image = imageView.image;
+  //  imageInfo.image =[UIImage imageNamed:@"login.png"];
+    imageInfo.referenceRect = imageView.frame;
+    imageInfo.referenceView = imageView.superview;
+    imageInfo.referenceContentMode = imageView.contentMode;
+    imageInfo.referenceCornerRadius = imageView.layer.cornerRadius;
+    
+    
+    
+    // Setup view controller
+    JTSImageViewController *imageViewer = [[JTSImageViewController alloc]
+                                           initWithImageInfo:imageInfo
+                                           mode:JTSImageViewControllerMode_Image
+                                           backgroundStyle:JTSImageViewControllerBackgroundOption_Scaled];
+    // Present the view controller.
+    [imageViewer showFromViewController:self transition:JTSImageViewControllerTransition_FromOriginalPosition];
 }
+
 ////按圖第二下縮回原型
 -(void)actionTap2:(UITapGestureRecognizer *)sender{
            if (isshow==YES) {
