@@ -19,5 +19,4 @@
 @property (weak, nonatomic) IBOutlet UIImageView *profile_image;
 
 
-
 @end

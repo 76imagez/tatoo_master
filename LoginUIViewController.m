@@ -77,7 +77,7 @@ UIFont *yourCustomFont = [UIFont fontWithName:@"叶根友千秋字体" size:18];
         [signUpViewController setDelegate:self]; // Set ourselves as the delegate
         
        
-         logInViewController.fields = PFLogInFieldsUsernameAndPassword | PFLogInFieldsLogInButton| PFLogInFieldsSignUpButton | PFLogInFieldsFacebook | PFLogInFieldsDismissButton  |PFLogInFieldsPasswordForgotten  ;
+         logInViewController.fields = PFLogInFieldsUsernameAndPassword | PFLogInFieldsLogInButton| PFLogInFieldsSignUpButton | PFLogInFieldsFacebook | PFLogInFieldsDismissButton |PFLogInFieldsPasswordForgotten  ;
         // Assign our sign up controller to be displayed from the login controller
         [logInViewController setSignUpController:signUpViewController];
         // Set the gesture
