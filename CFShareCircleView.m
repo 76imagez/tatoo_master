@@ -45,7 +45,7 @@
 - (id)initWithFrame:(CGRect)frame {
     self = [super initWithFrame:frame];
     if (self) {
-        _sharers = [[NSMutableArray alloc] initWithObjects:[CFSharer whatsapp],[CFSharer more],[CFSharer sina_weibo],[CFSharer twitter],[CFSharer facebook],nil];
+        _sharers = [[NSMutableArray alloc] initWithObjects: [CFSharer whatsapp],[CFSharer more],[CFSharer sina_weibo],[CFSharer twitter],[CFSharer facebook],nil];
         
         [self setUpCircleLayers];
     }
@@ -73,6 +73,7 @@
     }
     if(_sharingOptionsIsVisible)
         _sharingOptionsView.frame = self.bounds;
+    
     [self updateLayers];
 }
 
