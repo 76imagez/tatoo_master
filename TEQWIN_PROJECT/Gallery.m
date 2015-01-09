@@ -308,7 +308,7 @@ NSLog(@"%@", imageFilesArray);
       UIFont *buttonfont = [UIFont fontWithName:@"Weibei TC" size:14.0];
     [button.titleLabel setFont:buttonfont];
     button = [UIButton buttonWithType:UIButtonTypeRoundedRect]; //3
-       [button setTitle:@"Done" forState:UIControlStateNormal];
+       [button setTitle:@"Close" forState:UIControlStateNormal];
     [button setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
       [button setTitleColor:[UIColor whiteColor] forState:UIControlStateHighlighted];
     [button addTarget:self action:@selector(buttonclose:) forControlEvents:UIControlEventTouchUpInside];//2
